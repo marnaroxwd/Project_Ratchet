@@ -1,0 +1,120 @@
+.slider{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    &__el{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+    &__content{
+      grid-column: 1 / 6;
+      grid-row: 2 / 4;
+      padding: 20px;
+      z-index: 10;
+    }
+    &__link{
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      width: 150%;
+      transform: translate(0, -50%);
+    }
+    &__controls{
+      z-index: 100;
+      position: relative;
+      z-index: 10;
+    }
+    &__description{
+      margin-top: 5em;
+    }
+    &__img{
+      grid-column: 3 / -1;
+      grid-row: 1 / 4 ;
+      max-width: 100%;
+      align-self: center;
+    }
+  
+  }
+  
+  .grid{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 2%;
+  }
+  .title{
+    font-family: 'Space';
+    font-weight: 200;
+    font-size: 31px;
+    margin: 0;
+    &__game{
+      font-family: 'Moon';
+      font-weight: 100;
+      font-size: 25px;
+      margin: 0;
+      margin-top: 20px;
+    }
+  }
+  
+  .slider__list, .slider__controls{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  
+  /* animation*/
+  .slider__el .slider__content{
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateX(50px);
+    /*easings.net*/
+    transition: .3s ease-out;
+  }
+  
+  .slider__el .slider__img{
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateX(-50px);
+    transition: .3s ease-out;
+  }
+  
+  .slider__el .slider__explore{
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateX(-50px);
+    transition: .3s ease-out;
+  }
+  .slider__el .slider__background{
+    opacity: 0;
+  }
+  
+  .slider__el--show .slider__content,
+  .slider__el--show .slider__explore{
+    z-index: 50;
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .slider__el--show .slider__img{
+    z-index: 5;
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .slider__el--show .slider__background{
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+

@@ -1,0 +1,15 @@
+
+.slider{
+    &--fastoon{
+        background: linear-gradient(50deg, rgba(7,25,51,1) 0%, rgba(16,44,84,1) 50%, rgba(121,183,208,1) 100%);
+    }
+    &--veldin{
+        background: linear-gradient(240deg, rgba(201,160,116,1) 0%, rgba(48,39,89,1) 100%);
+    }
+    &--grelbin{
+        background: linear-gradient(220deg, rgba(155,183,185,1) 0%, rgba(66,91,132,1) 50%, rgba(4,7,43,1) 100%);
+    }
+    &--marcadia{
+        background: linear-gradient(200deg, rgb(216,190,149) 0%, rgb(150,46,11) 100%);
+    }
+}

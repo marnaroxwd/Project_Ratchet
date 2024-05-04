@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Eurostile';
+  src: url('../../assets/font/eurostile.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Space';
+  src: url('../../assets/font/Project_space.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Moon';
+  src: url('../../assets/font/Moon_Light.otf') format("opentype");
+  font-style: normal;
+}
+p{
+  line-height: 150%;
+}
+a{
+  text-decoration: none;
+}
+button{
+  background-color: transparent;
+  border: none;
+  display: inline-block;
+  color: white;
+}
+
+body{
+  margin: 0;
+  font-family: 'Eurostile';
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 20px;
+  background-color: #2a2a2a;
+
+}

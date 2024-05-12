@@ -1,0 +1,315 @@
+
+.video__content{
+    border: solid 1px $c-modal;
+    border-radius: 8px;
+    width: 100%
+}
+
+.content{
+    &__text{
+        & p{
+            margin-bottom: 0;
+        }
+        &--big{
+            font-size: 25;
+        }
+    }
+    &__title{
+        color: $c-modal;
+        margin: 0;
+        margin-bottom: 24px;
+        font-size: 38px;
+    }
+
+
+    &__image{
+        margin-top: 24px;
+        margin-bottom: 48px;
+        max-width: 100%;
+        &--border{
+            border: solid 2px $c-modal;
+            border-radius: 8px;
+            filter: drop-shadow(0 0 0.75rem rgba(0,0,0,0.5));
+        }
+    }
+}
+.clank__séparation{
+    &::before{
+        content: "";
+        display: block;
+        background-image: url('../../assets/images/clank_separation.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        padding-bottom: 9.7%;
+    
+        margin-bottom: 24px;
+    }
+}
+
+.tab__séparation::before{
+    content: "";
+    display: block;
+    background-image: url('../../assets/images/clank_separation.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-bottom: 9.7%;
+
+    margin-bottom: 24px;
+}
+.tab{
+    &__list{
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin-top: 0;
+        justify-content: space-between;
+        margin-bottom: 48px;
+    }
+    &__content{
+        transition: transform 0.3s ease-in-out;
+        transform-origin: top;
+        &--hidden{
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 760px){
+    .grid__content{
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+    }
+    .content{
+        &__text{
+            &--1{
+                grid-column: 1/7;
+            }
+            &--2{
+                grid-column: 1/7;
+            }
+            &--3{
+                grid-column: 2/8;
+            }
+        }
+        &__image{
+            place-self: center;
+            grid-column: 3/7;
+        }
+    }
+
+    .tab__séparation{
+        grid-column: 2/8;
+    }
+
+    
+}
+
+@media (min-width: 1024px){
+
+    
+    .tab{
+        &__list{
+            margin-top: 80px;
+        }
+        &__séparation{
+            grid-column: 2/10;
+            &::before{
+                background-image: url('../../assets/images/clank_separation_desktop.svg');
+                padding-bottom: 8.41%; /* Pour un rapport d'aspect de 74:880 */
+            }
+        }
+        &__content{
+            grid-column: 1/11;
+        }
+
+    }
+
+      
+    .tab__el{
+        border: solid 1px $c-text;
+        padding: .5em;
+        place-self: center;
+        grid-column: 3/5;
+        grid-row: 4;
+        color: $c-text;
+        position: relative;
+        border: solid 1px rgba(255, 255, 255, 0.3);
+        background: none;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 1.8px;
+        
+        padding: .5em;
+        transition: all 0.25s ease;
+        outline: none;
+        z-index: 20;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 10%;
+          width: 60px;
+          height: 1px;
+          transform: translateY(-1px);
+          background: $c-text;
+          transition: all 0.25s ease;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 10%;
+          width: 60px;
+          height: 1px;
+          transform: translateY(1px);
+          background: $c-text;
+          transition: all 0.25s ease;
+        }
+        
+        &:hover:not(.tab__el--active) {
+          opacity: 1;
+          box-shadow: 1px 1px 8px $c-text;
+          color: $c-text;
+          text-shadow: 0 0 4px $c-text;
+          cursor: pointer;
+          &.tab__el:before {
+            left: 0;
+            width: 20px;
+          }
+          &.tab__el:after {
+            right: 0;
+            width: 20px;
+          }
+          .tab__el--line:before {
+            bottom: 0;
+          }
+          .tab__el--line:after {
+            top: 0;
+          }
+        }
+        
+        &.tab__el--active {
+          opacity: 1;
+          box-shadow: 1px 1px 8px $c-text;
+          color: $c-text;
+          text-shadow: 0 0 4px $c-text;
+          cursor: default;
+          &.tab__el:before {
+            left: 0;
+            width: 20px;
+          }
+          &.tab__el:after {
+            right: 0;
+            width: 20px;
+          }
+          .tab__el--line:before {
+            bottom: 0;
+          }
+          .tab__el--line:after {
+            top: 0;
+          }
+        }
+    }
+    
+    
+    .grid__content{
+        grid-template-columns: repeat(10, 1fr);
+        column-gap: 20px;
+    }
+    .content{
+        &__title{
+            font-size: 47px;
+            margin-top: 48px;
+            margin-bottom: 64px;
+        }
+        &__text{
+            &--1{
+                grid-column: 1/7;
+            }
+            &--2{
+                grid-column: 1/7;
+            }
+            &--3{
+                grid-column: 3/9;
+                margin-bottom: 120px;
+            }
+            &--big{
+                font-size: 31px;
+                margin-bottom: 48px;
+            }
+        }
+        &__image{
+            &--1{
+                grid-column: 7/11;
+                grid-row: 1/3;
+                place-self: center;
+                width: 100%;
+            }
+            &--2{
+                grid-column: 3/9;
+                place-self: center;
+                width: 100%;
+            }
+        }
+    }
+
+    .clank__séparation{
+        &::before{
+            background-image: url('../../assets/images/clank_separation_desktop.svg');
+            padding-bottom: 8.41%; /* Pour un rapport d'aspect de 74:880 */
+
+        }
+    }
+
+    
+}
+@media (min-width: 1440px){
+    .content__déco {
+        position: relative;
+    }
+    
+    .content__déco::before {
+        content: "";
+        display: block;
+        width: 271px; /* Ajustez la largeur selon vos besoins */
+        height: 647px; /* Ajustez la hauteur selon vos besoins */
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .content__déco::before {
+        margin-left: -400px;
+        float: left;
+        background-image: url('../../assets/images/clank_side.svg');
+    }
+    
+    
+    
+    .tab__content{
+        grid-column: 1/7;
+        padding-bottom: 5em;
+    }
+    .content{
+        &__text{
+            &--1{
+                grid-column: 1/6;
+            }
+            &--2{
+                grid-column: 1/6;
+            }
+            &--3{
+                grid-column: 3/9;
+            }
+
+        }
+        &__image{
+            &--2{
+                grid-column: 4/8;
+                place-self: center;
+            }
+        }
+    }
+
+}

@@ -1,10 +1,10 @@
 .slider__explore{
-    border: solid 1px white;
+    border: solid 1px $c-text;
     padding: .5em;
     place-self: center;
     grid-column: 3/5;
     grid-row: 4;
-    color: white;
+    color: $c-text;
 }
 
 
@@ -29,7 +29,7 @@
       width: 60px;
       height: 1px;
       transform: translateY(-1px);
-      background: white;
+      background: $c-text;
       transition: all 0.25s ease;
     }
     &:after {
@@ -40,13 +40,13 @@
       width: 60px;
       height: 1px;
       transform: translateY(1px);
-      background: white;
+      background: $c-text;
       transition: all 0.25s ease;
     }
     &:hover {
-      box-shadow: 1px 1px 8px white;
-      color: white;
-      text-shadow: 0 0 4px white;
+      box-shadow: 1px 1px 8px $c-text;
+      color: $c-text;
+      text-shadow: 0 0 4px $c-text;
       cursor: pointer;
       &.slider__explore:before {
         left: 0;
@@ -72,7 +72,7 @@
       width: 1px;
       height: 20px;
       transform: translateX(1px);
-      background: white;
+      background: $c-text;
       transition: all 0.25s ease;
     }
     &:after {
@@ -83,7 +83,7 @@
       width: 1px;
       height: 20px;
       transform: translateX(-1px);
-      background: white;
+      background: $c-text;
       transition: all 0.25s ease;
     }
 }
@@ -94,17 +94,17 @@
   padding: .5em;
   width: 20px;
   height: 20px;
-  border: solid 1px white;
+  border: solid 1px $c-text;
   border-radius: 50%;
 
 }
 
 .slider__btn--prevpos:hover {
-  background: white; /* Fait le cercle blanc */
+  background: $c-text; /* Fait le cercle blanc */
 }
 
 .slider__btn--nextpos:hover {
-  background: white; /* Fait le cercle blanc */
+  background: $c-text; /* Fait le cercle blanc */
 }
 
 .slider__btn--nextpos:hover svg path {
@@ -145,3 +145,24 @@
   margin: 0;
 }
 
+
+
+//pour les tabs 
+
+.tab__btn{
+  font-family: 'Titillium';
+  font-size: 20px;
+  opacity: 0.5;
+}
+.tab--active{
+  opacity: 1;
+}
+@media (min-width: 1024px){
+  .tab__btn:not(.tab--active){
+    opacity: 1;
+    cursor: pointer;
+  }
+  .tab__btn.tab--active{
+    cursor: default;
+  }
+}

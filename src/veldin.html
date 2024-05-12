@@ -1,11 +1,243 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<html" lang="en">
+    <head>
+        <title>DWMA project</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      
+        <meta name="description" content="">
+        <!-- Meta Partage -->
+        <!-- Favicon -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+        <link rel="stylesheet" href="styles/app.css">
+        
+        <script src="scripts/app.js" defer></script>
+      </head>
+<body class="veldin__body">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <header>
+    <div class="burger__container">
+        <div class="menu-toggle burger__menu">
+            <span class="line--1"></span>
+            <span class="line--2"></span>
+            <span class="line--3"></span>
+        </div>
+    </div>
+    <nav class="menu">
+        <ul class="menu__liste">
+            <li class="menu__el"><a href="index.html">Choix de planète</a></li>
+            <li class="menu__el"><a href="fastoon.html">Fastoon</a></li>
+            <li class="menu__el"><a href="veldin.html">Veldin</a></li>
+            <li class="menu__el"><a href="grelbin.html">Grelbin</a></li>
+            <li class="menu__el"><a href="marcadia.html">Marcadia</a></li>
+        </ul>
+    </nav>
+    </header>
+
+<main>
+
+    <div class="grid__content">
     
+        <section class="content__text content__text--1 content__text--big">
+            <p>
+                Le jeu commence sur la planète des <span class="modal__trigger" data-modal-id="blaargs">blaargs</span> dans&nbsp;une&nbsp;cinématique où l'on voit <span class="modal__trigger" data-modal-id="clank">Clank</span>, une anomalie.
+                De base il devait être un robot de guerre au service du président Drek. et son “véritable nom” c'est <span class="modal__trigger" data-modal-id="xj-0461">XJ-0461</span>.
+                Seulement gros soucis il tombe sur un enregistrement robot qui divulguent les plans de <span class="modal__trigger" data-modal-id="drek">Drek</span>: Utilisé son armée pour détruire des planètes,
+                en récupérer les meilleures morceaux pour créer un planète parfaite pour les blaargs.
+                Car leur planète d'origine est trop polluée et est devenue inhabitable.
+            </p>
+        </section>
+        <img class="content__image content__image--1" src="assets/images/clank_blueprint.svg" alt="">
+
+        <section class="content__text content__text--2">
+            <p>Terrifié par cette nouvelle Clank s’échappe de l’usine de fabrication et part à la recherche de “<span class="modal__trigger" data-modal-id="qwark">Qwark</span>” le héro de la galaxie.
+                Lors de sa fuite, il est poursuivi et s’écrase sur <span class="modal__trigger" data-modal-id="veldin">Veldin</span>, planète sur laquelle il va rencontrer <span class="modal__trigger" data-modal-id="ratchet">Ratchet</span>.
+                Ratchet qui est un lombax solitaire un peu mécano qui vient de terminer son vaisseau spatial.
+                Seulement il lui manque un système d’allumage robotique pour pouvoir décoller.
+                Donc Clank lui propose de l’aider seulement si Ratchet l’emmène voir Qwark.
+                Étant donné que Ratchet, lui, tout ce qu’il veut c’est partir, il n’est donc pas très difficile à convaincre.
+                Même s’il en à cure de ce qu’il va arriver aux autres planètes.
+            </p>
+        </section>
+        <img class="content__image content__image--2 content__image--border" src="assets/images/ratchet_veldin.jpg" alt="">
+        
+        <section class="content__text content__text--3 clank__séparation"> 
+            <div class="content__déco">
+                <h2 class="content__title">Capitaine Qwark le félon</h2>
+                <div class="content__text--big">
+                    <p>C’est à partir de là que la construction de l’amitié entre Clank, le noble robot un peu naïf et Ratchet, le lombax je-m’en-foutiste et un peu cynique.
+                         Et c’est l’évolution de leur amitié qui nous tient en haleine tout le long du jeu.
+                    </p>
+                </div>
+                <p>
+                    Après quelques péripéties sur plusieurs planètes. On se rendra très vite compte que Qwark n’est rien d’autre qu’un <span class="modal__trigger" data-modal-id="félon">félon minable</span>.
+                     C’est lorsqu’il les a envoyés sur <span class="modal__trigger" data-modal-id="umbris">Umbris</span> pour passer un test d’héroïsme (qui avait pour but de les abattre).
+                      Ce même test se termine contre un <span class="modal__trigger" data-modal-id="monstre">monstre géant</span> au milieu de la lave. On apprend que Qwark est le porte parole de la future planète blaarg.
+                       Cette même planète qui le sponsorise car il est plus intéressé par son commerce et sa notoriété qu’autre chose.
+                        Étant donné que nos deux héros avaient déjà perturber les plans de Drek. Il avait envoyé Qwark mettre Ratchet et Clank hors d’état de nuire.
+                </p>
+            </div>
+        </section>
+
+
+        <div class="tab__séparation">
+            <ul class="tab__list">
+                <li class="tab__el tab__el--active">
+                    <button class="tab__btn tab--active" data-target="tab--1">Changement</button>
+                </li>
+
+                <li class="tab__el">
+                    <button class="tab__btn" data-target="tab--2">Bataille finale</button>
+                </li>
+
+                <li class="tab__el">
+                    <button class="tab__btn" data-target="tab--3">Fun fact</button>
+                </li>
+
+            </ul>
+
+            <div class="grid__content">
+
+                <section class="tab__content" id="tab--1">
+                    <h2 class="content__title">Changement chez Ratchet</h2>
+                    <p>
+                        À la fin du test , Clank est giflé par la brutalité qu’est la réalité, lui qui pensait que Qwark était un héro noble avec le sens du devoir.
+                         Quant à Ratchet lui il est aveuglé par la colère et va juste chercher à se venger de Qwark à partir de maintenant 
+                    
+                        Toute cette situation, il l'a rejette sur clank car il est “trop droit” pour être apte à réfléchir normalement.
+                         La vengeance devient donc l’objectif numéro 1. Après un jeu de piste et Qwark battu lors d’une bataille spatiale épique.
+                          Ratchet prend enfin conscience de la gravité de la situation vis-à-vis de Drek et décide de venir en aide à la galaxie.
+                           De plus les nouvelles catastrophiques s'enchaînent: Drek a créer un déplanètiseur et en plus il vise vers Veldin, planète natale de Ratchet !
+                    </p>
+                    <img src="" alt="">
+                </section>
+                <section class="tab__content tab__content--hidden" id="tab--2">
+                    <h2 class="content__title">Fin du jeu</h2>
+                    <p>
+                        Après avoir terrassé tous les blaargs sur place et Drek dans un combat long et douloureux, notre Lombax et petit robot qui ont failli perdre la vie.
+                         Après avoir atteint cet objectif, tout laissait présager que nos deux héros allaient se séparer. 
+                         Pendant que Clank était en train de partir, Ratchet rappelle Clank sous prétexte qu'il y avait un bras à réparer.
+                          Et c’est là qu’ils resteront ensemble, et ils resteront ensemble pour au moins les 20 prochaines années.
+                    </p>
+                </section>
+                <section class="tab__content tab__content--hidden" id="tab--3">
+                    <h2 class="content__title">Fun fact</h2>
+                    <p>Sur le premier opus: Lors d’une course d'hoverboard, il faut interagir avec une présentatrice pour y avoir accès.
+                         Si vous faites des saut horizontaux devant elle avant de commencer la course, sa poitrine grandit à chaque saut.
+                    </p>
+                    <div>
+                        <img src="" alt="">
+                        <img src="" alt="">
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+    <div id="modal-blaargs" class="modal modal__close modal__default-state">
+        <div class="modal-background">
+            <div class="modal__content">
+                <h2>blaargs</h2>
+                <p>Race des méchants du premier ratchet</p>
+                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal-clank" class="modal modal__close modal__default-state">
+        <div class="modal-background">
+            <div class="modal__content">
+                <h2>clank</h2>
+                <p>Race des méchants du premier ratchet</p>
+                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal-xj-0461" class="modal modal__close modal__default-state">
+        <div class="modal-background">
+            <div class="modal__content">
+                <h2>xj0461</h2>
+                <p>Race des méchants du premier ratchet</p>
+                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal-drek" class="modal modal__close modal__default-state">
+        <div class="modal-background">
+            <div class="modal__content">
+                <h2>drek</h2>
+                <p>Race des méchants du premier ratchet</p>
+                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-qwark" class="modal modal__close modal__default-state">
+        <div class="modal-background">
+            <div class="modal__content">
+                <h2>Qwark</h2>
+                <p>Race des méchants du premier ratchet</p>
+                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-veldin" class="modal modal__close modal__default-state">
+        <div class="modal-background">
+            <div class="modal__content">
+                <h2>Veldin</h2>
+                <p>Race des méchants du premier ratchet</p>
+                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-ratchet" class="modal modal__close modal__default-state">
+        <div class="modal-background">
+            <div class="modal__content">
+                <h2>Ratchet</h2>
+                <p>Race des méchants du premier ratchet</p>
+                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-félon" class="modal modal__close modal__default-state">
+        <div class="modal-background">
+            <div class="modal__content">
+                <h2>félon</h2>
+                <p>Race des méchants du premier ratchet</p>
+                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-umbris" class="modal modal__close modal__default-state">
+        <div class="modal-background">
+            <div class="modal__content">
+                <h2>umbris</h2>
+                <p>Race des méchants du premier ratchet</p>
+                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-monstre" class="modal modal__close modal__default-state">
+        <div class="modal-background">
+            <div class="modal__content">
+                <h2>monstre</h2>
+                <p>Race des méchants du premier ratchet</p>
+                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

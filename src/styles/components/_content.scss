@@ -127,7 +127,7 @@
     }
 
       
-    .tab__el{
+    .tab__btn{
         border: solid 1px $c-text;
         padding: .5em;
         place-self: center;
@@ -168,48 +168,33 @@
           transition: all 0.25s ease;
         }
         
-        &:hover:not(.tab__el--active) {
-          opacity: 1;
-          box-shadow: 1px 1px 8px $c-text;
-          color: $c-text;
-          text-shadow: 0 0 4px $c-text;
-          cursor: pointer;
-          &.tab__el:before {
-            left: 0;
-            width: 20px;
-          }
-          &.tab__el:after {
-            right: 0;
-            width: 20px;
-          }
-          .tab__el--line:before {
-            bottom: 0;
-          }
-          .tab__el--line:after {
-            top: 0;
-          }
-        }
-        
-        &.tab__el--active {
-          opacity: 1;
-          box-shadow: 1px 1px 8px $c-text;
-          color: $c-text;
-          text-shadow: 0 0 4px $c-text;
-          cursor: default;
-          &.tab__el:before {
-            left: 0;
-            width: 20px;
-          }
-          &.tab__el:after {
-            right: 0;
-            width: 20px;
-          }
-          .tab__el--line:before {
-            bottom: 0;
-          }
-          .tab__el--line:after {
-            top: 0;
-          }
+        &:hover, &.tab--active {
+            opacity: 1;
+            box-shadow: 1px 1px 8px $c-text;
+            color: $c-text;
+            text-shadow: 0 0 4px $c-text;
+            cursor: pointer;
+    
+            &:before {
+                left: 0;
+                width: 20px;
+            }
+    
+            &:after {
+                right: 0;
+                width: 20px;
+            }
+    
+            .tab__btn--line:before {
+                bottom: 0;
+            }
+    
+            .tab__btn--line:after {
+                top: 0;
+            }
+            &.tab--active{
+                cursor: default;
+            }
         }
     }
     

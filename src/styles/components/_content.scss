@@ -1,35 +1,52 @@
 
-.video__content{
-    border: solid 1px $c-modal;
-    border-radius: 8px;
-    width: 100%
-}
 
 .content{
+    &__video{
+        max-width: 100%;
+        border: solid 1px $c-modal;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
     &__text{
         & p{
             margin-bottom: 0;
         }
         &--big{
-            font-size: 25;
+            font-size: 25px;
+            margin-bottom: 40px;
+        }
+        &--1{
+            margin-top: 80px;
+            margin-bottom: 40px;
+        }
+        &--2{
+            margin-top: 80px;
+            margin-bottom: 40px;
+        }
+        &--3{
+            margin-bottom: 80px;
         }
     }
     &__title{
         color: $c-modal;
         margin: 0;
-        margin-bottom: 24px;
+        margin-bottom: 20px;
         font-size: 38px;
     }
 
 
     &__image{
-        margin-top: 24px;
-        margin-bottom: 48px;
         max-width: 100%;
         &--border{
             border: solid 2px $c-modal;
             border-radius: 8px;
             filter: drop-shadow(0 0 0.75rem rgba(0,0,0,0.5));
+        }
+        &--2{
+            margin-bottom: 80px;
         }
     }
 }
@@ -43,7 +60,7 @@
         width: 100%;
         padding-bottom: 9.7%;
     
-        margin-bottom: 24px;
+        margin-bottom: 40px;
     }
 }
 
@@ -55,8 +72,7 @@
     background-repeat: no-repeat;
     width: 100%;
     padding-bottom: 9.7%;
-
-    margin-bottom: 24px;
+    margin-bottom: 40px;
 }
 .tab{
     &__list{
@@ -127,7 +143,7 @@
     }
 
       
-    .tab__btn{
+    .tab__el{
         border: solid 1px $c-text;
         padding: .5em;
         place-self: center;
@@ -168,33 +184,48 @@
           transition: all 0.25s ease;
         }
         
-        &:hover, &.tab--active {
-            opacity: 1;
-            box-shadow: 1px 1px 8px $c-text;
-            color: $c-text;
-            text-shadow: 0 0 4px $c-text;
-            cursor: pointer;
-    
-            &:before {
-                left: 0;
-                width: 20px;
-            }
-    
-            &:after {
-                right: 0;
-                width: 20px;
-            }
-    
-            .tab__btn--line:before {
-                bottom: 0;
-            }
-    
-            .tab__btn--line:after {
-                top: 0;
-            }
-            &.tab--active{
-                cursor: default;
-            }
+        &:hover:not(.tab__el--active) {
+          opacity: 1;
+          box-shadow: 1px 1px 8px $c-text;
+          color: $c-text;
+          text-shadow: 0 0 4px $c-text;
+          cursor: pointer;
+          &.tab__el:before {
+            left: 0;
+            width: 20px;
+          }
+          &.tab__el:after {
+            right: 0;
+            width: 20px;
+          }
+          .tab__el--line:before {
+            bottom: 0;
+          }
+          .tab__el--line:after {
+            top: 0;
+          }
+        }
+        
+        &.tab__el--active {
+          opacity: 1;
+          box-shadow: 1px 1px 8px $c-text;
+          color: $c-text;
+          text-shadow: 0 0 4px $c-text;
+          cursor: default;
+          &.tab__el:before {
+            left: 0;
+            width: 20px;
+          }
+          &.tab__el:after {
+            right: 0;
+            width: 20px;
+          }
+          .tab__el--line:before {
+            bottom: 0;
+          }
+          .tab__el--line:after {
+            top: 0;
+          }
         }
     }
     

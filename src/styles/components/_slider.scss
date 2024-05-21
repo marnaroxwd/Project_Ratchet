@@ -1,119 +1,164 @@
 .slider{
-    width: 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+&__list{
+  height: 100vh;
+}
+&__el{
+  height: 100vh;
+  &--show{
     height: 100%;
-    position: relative;
-    overflow: hidden;
-    &__el{
-      position: absolute;
-      top: 0;
-      bottom: 0;
+
+    .slider__background{
+      &--fastoon{
+        background-image: url(../../assets/images/fastoon.png);
+      }
+      &--veldin{
+        background-image: url(../../assets/images/Veldin.png);
+      }
+      &--grelbin{
+        background-image: url(../../assets/images/Grelbin.png);
+      }
+      &--marcadia{
+        background-image: url(../../assets/images/marcadia.png);
+
+      }
     }
-    &__content{
-      grid-column: 1 / 6;
-      grid-row: 2 / 4;
-      padding: 20px;
-      z-index: 10;
-    }
-    &__link{
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      width: 150%;
-      transform: translate(0, -50%);
-    }
-    &__controls{
-      z-index: 100;
-      position: relative;
-      z-index: 10;
-    }
-    &__description{
-      margin-top: 5em;
-    }
-    &__img{
-      grid-column: 3 / -1;
-      grid-row: 1 / 4 ;
-      max-width: 100%;
-      align-self: center;
-    }
-  
   }
-  
-  .grid{
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 2%;
+}
+  &__content{
+    top: 20vh;
+    position: absolute;
+    margin-left: 1em;
   }
-  .title{
+  &__background{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 300%;
+    height: 170%;
+    width: 100%;
+    top: -20%;
+    left: 15%;
+  }
+  &__title{
     font-family: 'Space';
     font-weight: 200;
     font-size: 31px;
     margin: 0;
-    &__game{
+    &--game{
       font-family: 'Moon';
       font-weight: 100;
       font-size: 25px;
       margin: 0;
-      margin-top: 20px;
     }
   }
-  
-  .slider__list, .slider__controls{
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  &__description{
+    margin-top: 40px;
+    margin-bottom: 50px;
+    
   }
-  
-  
-  /* animation*/
-  .slider__el .slider__content{
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-    transform: translateX(50px);
-    /*easings.net*/
-    transition: .3s ease-out;
-  }
-  
-  .slider__el .slider__img{
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-    transform: translateX(-50px);
-    transition: .3s ease-out;
-  }
-  
-  .slider__el .slider__explore{
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-    transform: translateX(-50px);
-    transition: .3s ease-out;
-  }
-  .slider__el .slider__background{
-    opacity: 0;
-  }
-  
-  .slider__el--show .slider__content,
-  .slider__el--show .slider__explore{
-    z-index: 50;
-    opacity: 1;
-    pointer-events: all;
-    visibility: visible;
-    transform: translateX(0);
-  }
-  .slider__el--show .slider__img{
-    z-index: 5;
-    opacity: 1;
-    pointer-events: all;
-    visibility: visible;
-    transform: translateX(0);
-  }
-  .slider__el--show .slider__background{
-    opacity: 1;
-    pointer-events: all;
-    visibility: visible;
-    transform: translateX(0);
+  &__controls{
+    bottom: 15vh;
+    position: absolute;
+    display: flex;
+    margin-left: 1em;
   }
 
+  &__btn{
+    margin-top: 40px;
+    &--prevpos{
+      margin-right: 3em;
+    }
+  }
+
+}
+
+.slider__list, .slider__controls{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.slider__list, .slider__el{
+  pointer-events: none;
+}
+.slider__list, .slider__el--show{
+  pointer-events: all;
+}
+
+/* animation*/
+.slider__el .slider__content{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(50px);
+  /*easings.net*/
+  transition: .3s ease-out;
+}
+
+
+
+.slider__el--show .slider__content{
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+  transform: translateX(0);
+}
+@media(min-width: 760px){
+  .slider{
+    &__background{
+      background-size: 200%;
+    }
+    &__title{
+      font-size: 47px;
+      &--game{
+        font-size: 38px;
+      }
+    }
+    &__content{
+      margin-left: 3em;
+    }
+    &__description{
+      font-size: 25px;
+      max-width: 70%;
+      margin-top: 70px;
+      margin-bottom: 80px;
+    }
+    &__explore{
+      font-size: 31px;
+    }
+    &__controls{
+      margin-left: 3em;
+      bottom: 20vh;
+    }
+  }
+}
+@media(min-width: 1024px){
+.slider{
+  &__background{
+    background-size: 100%;
+    left: 25%;
+    top: -30%;
+  }
+  &__title{
+    font-size: 58px;
+    &--game{
+      font-size: 47px;
+    }
+  }
+  &__content{
+    margin-left: 5em;
+  }
+  &__description{
+    font-size: 31px;
+    margin-top: 80px;
+    margin-bottom: 90px;
+  }
+  &__explore{
+    font-size: 38px;
+  }
+  &__controls{
+    margin-left: 5em;
+  }
+}
+}

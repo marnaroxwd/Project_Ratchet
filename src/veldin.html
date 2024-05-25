@@ -11,43 +11,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
       
         <link rel="stylesheet" href="styles/app.css">
-        
         <script src="scripts/app.js" defer></script>
       </head>
+      <header class="scrollnav">
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__el"><a href="fastoon.html">Fastoon</a></li>
+                <li class="nav__el nav__el--active"><a href="veldin.html">Veldin</a></li>
+                <li class="nav__el"><a href="grelbin.html">Grelbin</a></li>
+                <li class="nav__el"><a href="marcadia.html">Marcadia</a></li>
+            </ul>
+        </nav>
+    </header>
 <body class="content__body">
     <div id="stars"></div>
     <div id="stars2"></div>
     <div id="stars3"></div>
-    <header>
-    <div class="burger__container">
-        <div class="menu-toggle burger__menu">
-            <span class="line--1"></span>
-            <span class="line--2"></span>
-            <span class="line--3"></span>
-        </div>
-    </div>
-    <nav class="menu">
-        <ul class="menu__liste">
-            <li class="menu__el"><a href="index.html">Choix de planète</a></li>
-            <li class="menu__el"><a href="fastoon.html">Fastoon</a></li>
-            <li class="menu__el"><a href="veldin.html">Veldin</a></li>
-            <li class="menu__el"><a href="grelbin.html">Grelbin</a></li>
-            <li class="menu__el"><a href="marcadia.html">Marcadia</a></li>
-        </ul>
-    </nav>
-    </header>
+
 
 <main>
-  <!--Après les deux points faire une liste des plans de drek pour donner un rythme différent-->
+<!--
   <div class="content__container">
         <video class="content__video" autoplay loop muted>
             <source src="assets/videos/R&C_trailer.mp4" type="video/mp4"/>
             Votre navigateur ne supporte pas la balise vidéo.
         </video>
-        <p class="content__legends">Premier trailer du jeu ratchet & Clank</p>
+        <p class="content__legends content__legends--video">Premier trailer du jeu ratchet & Clank</p>
     </div>
 
-      
+  -->    
     <div class="grid__content">
     
         <section class="content__text content__text--1 content__text--big">
@@ -65,9 +57,6 @@
                     <li class="content__el">Récupérer les morceau des planètes pour en créer une parfaite;</li>
                     <li class="content__el">Car leur planète d'origine est trop polluée et est devenue inhabitable.</li>
                 </ul>
-            </p>
-            <p>
-                
             </p>
             
         </section>
@@ -118,14 +107,16 @@
             
             <button class="accordion__btn">Nouvel objectif</button>
             <div class="accordion">
-                <p class="accordion__paragraph">
-                    À la fin du test , Clank est giflé par la brutalité qu’est la réalité,
-                     lui qui pensait que Qwark était un héors noble avec le sens du devoir.
-                      Quant à Ratchet lui il est aveuglé par la colère et va juste chercher à se venger de Qwark à partir de maintenant.
-                </p>
-                <p class="accordion__paragraph">
-                    La vengeance devient donc l’objectif numéro 1. Après un jeu de piste et Qwark battu lors d’une bataille spatiale épique. Il décide enfin de venir en aide à la galaxie. De plus les nouvelles catastrophiques s'enchaînent: Drek a créer un déplanètiseur et en plus il vise vers Veldin !
-                </p>
+                <div class="accordion__content">
+                    <p class="accordion__paragraph">
+                        À la fin du test , Clank est giflé par la brutalité qu’est la réalité,
+                         lui qui pensait que Qwark était un héors noble avec le sens du devoir.
+                          Quant à Ratchet lui il est aveuglé par la colère et va juste chercher à se venger de Qwark à partir de maintenant.
+                    </p>
+                    <p class="accordion__paragraph">
+                        La vengeance devient donc l’objectif numéro 1. Après un jeu de piste et Qwark battu lors d’une bataille spatiale épique. Il décide enfin de venir en aide à la galaxie. De plus les nouvelles catastrophiques s'enchaînent: Drek a créer un déplanètiseur et en plus il vise vers Veldin !
+                    </p>
+                </div>
                 <img class="accordion__image accordion__image--last" src="assets/images/ratchet_veldin.jpg" alt="">
             </div>
             
@@ -161,12 +152,17 @@
     </div>
 </main>
 
+
+
+
+
     <div id="modal-blaargs" class="modal modal__close modal__default-state">
         <div class="modal__background ">
             <div class="modal__content">
-                <h2>blaargs</h2>
+                <button class="modal__close-button">Fermer</button>
+                <h2>Blaargs</h2>
+                <img class="modal__img" src="assets/images/Blaargs.jpg" alt="">
                 <p>Race des méchants du premier ratchet</p>
-                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
             </div>
         </div>
     </div>
@@ -177,7 +173,6 @@
                 <button class="modal__close-button">Fermer</button>
                 <h2>Clank</h2>
                 <p>Race des méchants du premier ratchet</p>
-                 <!-- Bouton Close -->
             </div>
         </div>
     </div>
@@ -185,9 +180,9 @@
     <div id="modal-xj-0461" class="modal modal__close modal__default-state">
         <div class="modal__background ">
             <div class="modal__content">
+                <button class="modal__close-button">Fermer</button> 
                 <h2>xj0461</h2>
                 <p>Race des méchants du premier ratchet</p>
-                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
             </div>
         </div>
     </div>
@@ -195,9 +190,9 @@
     <div id="modal-drek" class="modal modal__close modal__default-state">
         <div class="modal__background ">
             <div class="modal__content">
+                <button class="modal__close-button">Fermer</button> 
                 <h2>drek</h2>
                 <p>Race des méchants du premier ratchet</p>
-                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
             </div>
         </div>
     </div>
@@ -205,9 +200,9 @@
     <div id="modal-qwark" class="modal modal__close modal__default-state">
         <div class="modal__background ">
             <div class="modal__content">
+                <button class="modal__close-button">Fermer</button> 
                 <h2>Qwark</h2>
                 <p>Race des méchants du premier ratchet</p>
-                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
             </div>
         </div>
     </div>
@@ -215,9 +210,9 @@
     <div id="modal-veldin" class="modal modal__close modal__default-state">
         <div class="modal__background ">
             <div class="modal__content">
+                <button class="modal__close-button">Fermer</button> 
                 <h2>Veldin</h2>
                 <p>Race des méchants du premier ratchet</p>
-                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
             </div>
         </div>
     </div>
@@ -225,9 +220,9 @@
     <div id="modal-ratchet" class="modal modal__close modal__default-state">
         <div class="modal__background ">
             <div class="modal__content">
+                <button class="modal__close-button">Fermer</button> 
                 <h2>Ratchet</h2>
                 <p>Race des méchants du premier ratchet</p>
-                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
             </div>
         </div>
     </div>
@@ -235,9 +230,9 @@
     <div id="modal-félon" class="modal modal__close modal__default-state">
         <div class="modal__background ">
             <div class="modal__content">
+                <button class="modal__close-button">Fermer</button> 
                 <h2>félon</h2>
-                <p>Race des méchants du premier ratchet</p>
-                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
+                <p>Race des méchants du premier ratchet</p> 
             </div>
         </div>
     </div>
@@ -245,9 +240,9 @@
     <div id="modal-umbris" class="modal modal__close modal__default-state">
         <div class="modal__background ">
             <div class="modal__content">
+                <button class="modal__close-button">Fermer</button> 
                 <h2>umbris</h2>
                 <p>Race des méchants du premier ratchet</p>
-                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
             </div>
         </div>
     </div>
@@ -255,9 +250,9 @@
     <div id="modal-monstre" class="modal modal__close modal__default-state">
         <div class="modal__background ">
             <div class="modal__content">
+                <button class="modal__close-button">Fermer</button> 
                 <h2>monstre</h2>
                 <p>Race des méchants du premier ratchet</p>
-                <button class="modal__close-button">Fermer</button> <!-- Bouton Close -->
             </div>
         </div>
     </div>

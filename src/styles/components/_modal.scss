@@ -15,6 +15,26 @@
   &__trigger {
     cursor: pointer;
     color: $c-modal;
+    font-family: "Eurostile-italic";
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    &::after{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: bottom right;
+    }
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+  }
   }
   &__background {
     position: fixed;
@@ -31,7 +51,7 @@
   }
   &__content {
     background-color: #2a2a2a;
-    margin: 15% auto;
+    margin: 5em auto;
     padding: 20px;
     border: 2px solid $c-modal;
     width: 80%;
@@ -53,9 +73,30 @@
   &__default-state {
     display: none;
   }
+  &__img{
+    max-width: 70%;
+  }
 }
-
-
+@media(min-width: 760px){
+  .modal{
+    &__img{
+      max-width: 35%;
+    }
+  }
+}
+@media(min-width: 1024px){
+  
+}
+@media(min-width: 1440px){
+  .modal{
+    &__img{
+      max-width: 50%;
+    }
+    &__content{
+      width: 60%;
+    }
+  }
+}
 
 @keyframes unfoldIn {
   0% {

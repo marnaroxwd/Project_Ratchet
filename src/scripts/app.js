@@ -2,24 +2,6 @@
 
 let prev = document.querySelector(".slider__btn--prev");
 let next = document.querySelector(".slider__btn--next");
-let menuToggle = document.querySelector('.menu-toggle');
-let burger = document.querySelector('.burger__menu');
-
-if (burger) {
-    burger.onclick = function(){
-        document.body.classList.toggle("burger__open");
-    }
-}
-
-if (menuToggle) {
-    menuToggle.addEventListener('click', function() {
-        document.body.classList.toggle("menu--open");
-    });
-}
-
-
-
-
 
 if (document.querySelector(".slider__list")) {
     prev.addEventListener("click", prevSlide);
@@ -161,3 +143,30 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    var scrollnav = document.querySelector('.scrollnav');
+    var oldScrollY = 0;
+    var timer;
+
+    window.addEventListener('scroll', function () {
+        clearTimeout(timer);
+
+        if (oldScrollY > window.scrollY || isBottomReached()) {
+            scrollnav.classList.remove('scrollnav--hide');
+        } else {
+            scrollnav.classList.add('scrollnav--hide');
+        }
+
+        timer = setTimeout(function () {
+            if (isBottomReached()) {
+                scrollnav.classList.remove('scrollnav--hide');
+            }
+        }, 3000);
+
+        oldScrollY = window.scrollY;
+    });
+
+    function isBottomReached() {
+        return window.innerHeight + window.scrollY >= document.body.offsetHeight;
+    }
+});

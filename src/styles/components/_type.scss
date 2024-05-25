@@ -5,6 +5,11 @@
   font-style: normal;
 }
 @font-face {
+  font-family: 'Eurostile-italic';
+  src: url('../../assets/font/Eurostile-italic.otf') format('opentype');
+  font-weight: normal;
+}
+@font-face {
   font-family: 'Space';
   src: url('../../assets/font/Project_space.otf') format("opentype");
   font-weight: normal;
@@ -25,14 +30,8 @@ body{
   margin: 0;
   font-family: 'Eurostile';
   color: white;
-  height: 100vh;
   font-size: 20px;
   background-color: #2a2a2a;
-}
-
-header{
-  width: 100%;
-  height: 80px;
 }
 
 main{

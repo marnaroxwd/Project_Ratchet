@@ -1,0 +1,82 @@
+.scrollnav {
+    background-color: #3E0A68;
+    box-shadow: 0 8px 8px -6px #3E0A68;
+    padding: 25px;
+    padding-left: 20px;
+    position: sticky;
+    top: 0; 
+    transform: translateY(0); 
+    transition: transform 0.3s ease-in-out; 
+    z-index: 10;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+        display: none; 
+    }
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+.nav__el {
+    font-size: 25px;
+    margin-right: 40px;
+    position: relative; // Position relative pour le pseudo-élément
+
+    & a {
+        color: $c-text;
+        text-decoration: none;
+        transition: color 0.3s;
+        display: inline-block; // Nécessaire pour la transition du pseudo-élément
+
+        &::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px; // Épaisseur du soulignement
+            background: $c-text; // Couleur du soulignement
+            transition: width 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+            width: 100%; // Largeur complète au survol
+        }
+    }
+    &--active {
+        & a::after{
+            width: 100%;
+        }
+        & a:hover{
+            cursor: default; 
+        }
+    }
+
+}
+
+
+// Classe pour cacher la barre de navigation
+.scrollnav--hide {
+    transform: translateY(-100%);
+}
+
+@media (min-width: 760px){
+    .scrollnav {
+        padding-left: 32px;
+    }
+    .nav__el{
+        margin-right: 80px;
+    }
+}
+@media (min-width: 1024px){
+    .scrollnav {
+        padding-left: 72px;
+    }
+}
+@media (min-width: 1440px){
+    .scrollnav {
+        padding-left: 120px;
+    }
+  }

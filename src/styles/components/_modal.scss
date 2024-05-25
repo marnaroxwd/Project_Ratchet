@@ -1,6 +1,6 @@
-
-
 /* Style for modal */
+
+// IL FAUT FAIRE EN SORTE D'AJOUTER LA CALSSE ACTIVE SUR LE BACKGROUND POUR POUVOIR REJOUER L'ANIMATION SI ON REOUVRE UNE DEUXIEME FOIS
 .modal {
   position: fixed;
   z-index: 1;
@@ -9,79 +9,95 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba($color: #000000, $alpha: 0.5);
-  transform:scaleY(.01) scaleX(0);
-  animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-  &__trigger{
-      cursor: pointer;
-      color: $c-modal
+  animation: unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
+
+  &__trigger {
+    cursor: pointer;
+    color: $c-modal;
+  }
+  &__background {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(#000000, 0.5);
+
+    &--active{
+    animation: unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+  }
+  &__content {
+    background-color: #2a2a2a;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid $c-modal;
+    width: 80%;
+    opacity: 0; /* Start hidden */
+    transform: scale(0); /* Start with zoomed out */
+    
+    animation: zoomOut 1s forwards; /* Animation de fermeture pour le contenu */
+
+    &--active {
+      transform: scale(1); /* Normal scale when active */
+      animation: zoomIn 1s forwards;
+      animation-delay: 1s; /* Delay to start after background animation ends */
+    }
+  }
+  &__close {
+    animation: unfoldOut 1s forwards;
+    animation-delay: 1s; /* Ajoutez un délai pour que cette animation commence après la fin de zoomOut */
+  }
+  &__default-state {
+    display: none;
   }
 }
 
-.modal__default-state{
-display: none;
-}
-
-.modal__active {
-
-animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-pointer-events: auto;
-}
-
-.modal__close {
-transform:scale(1);
-animation:unfoldOut 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-}
-
-
-.modal__content {
-  background-color: #2a2a2a;
-  margin: 15% auto;
-  padding: 20px;
-  border: 2px solid $c-modal;
-  width: 80%;
-}
 
 
 @keyframes unfoldIn {
   0% {
-    transform:scaleY(.005) scaleX(0);
+    transform: scaleY(0.005) scaleX(0);
   }
   50% {
-    transform:scaleY(.005) scaleX(1);
+    transform: scaleY(0.005) scaleX(1);
   }
   100% {
-    transform:scaleY(1) scaleX(1);
+    transform: scaleY(1) scaleX(1);
   }
 }
 
 @keyframes unfoldOut {
   0% {
-    display: block;
-    transform:scaleY(1) scaleX(1);
+    transform: scaleY(1) scaleX(1);
   }
   50% {
-    transform:scaleY(.005) scaleX(1);
+    transform: scaleY(0.005) scaleX(1);
   }
   100% {
-    transform:scaleY(.005) scaleX(0);
+    transform: scaleY(0.005) scaleX(0);
   }
 }
 
 @keyframes zoomIn {
   0% {
-    transform:scale(0);
+    transform: scale(0);
+    opacity: 1;
   }
   100% {
-    transform:scale(1);
+    transform: scale(1);
+    opacity: 1;
   }
 }
-
 @keyframes zoomOut {
   0% {
-    transform:scale(1);
+    transform: scale(1);
+    opacity: 1;
   }
   100% {
-    transform:scale(0);
+    transform: scale(0);
+    opacity: 0;
   }
 }

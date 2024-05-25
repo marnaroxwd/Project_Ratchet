@@ -128,12 +128,47 @@
       font-size: 31px;
     }
     &__controls{
-      margin-left: 3em;
       bottom: 20vh;
     }
   }
 }
 @media(min-width: 1024px){
+  .slider{
+    &__background{
+      background-size: 100%;
+      left: 25%;
+      top: -30%;
+    }
+    &__title{
+      font-size: 58px;
+      &--game{
+        font-size: 47px;
+      }
+    }
+    &__content{
+      margin-left: 5em;
+      margin-top: -3em;
+    }
+    &__description{
+      font-size: 31px;
+      margin-top: 80px;
+      margin-bottom: 90px;
+    }
+    &__explore{
+      font-size: 25px;
+    }
+    &__controls{
+      bottom: 10vh;
+    }
+    &__btn{
+      &--prevpos{
+        margin-right: 10em;
+      }
+    }
+  }
+  }
+
+@media(min-width: 1440px){
 .slider{
   &__background{
     background-size: 100%;
@@ -153,12 +188,6 @@
     font-size: 31px;
     margin-top: 80px;
     margin-bottom: 90px;
-  }
-  &__explore{
-    font-size: 38px;
-  }
-  &__controls{
-    margin-left: 5em;
   }
 }
 }

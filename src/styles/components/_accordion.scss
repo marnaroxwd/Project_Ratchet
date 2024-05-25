@@ -1,0 +1,58 @@
+.accordion{
+    &__btn{
+        font-family: "Moon";
+        color: $c-text;
+        cursor: pointer;
+        padding: 16px;
+        padding-left: 0;
+        margin-bottom: 40px;
+        width: 100%;
+        border-bottom: solid 1px $c-text;
+        outline: none;
+        font-size: 25px;
+        transition: 0.4s;
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        width: 100%;
+    }
+
+    &__séparation:last-child{
+        margin-bottom: 120px;
+    }
+  }
+
+  
+  .accordion {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__paragraph{
+        margin-bottom: 1em;
+    }
+    &__image{
+        margin: 0 auto;
+        max-width: 90%;
+        border: solid 2px $c-modal;
+        border-radius: 8px;
+
+        &--last{
+            margin-bottom: 40px;
+        }
+    }
+  }
+  
+  /* Style pour le signe "+" */
+  .accordion__btn::after {
+    content: '+';
+    font-size: 25px;
+    /* float: right; Retiré car nous utilisons Flexbox maintenant */
+  }
+  
+  /* Changement de style quand l'élément est actif (quand le accordion est ouvert) */
+  .active::after {
+    content: "-";
+  }

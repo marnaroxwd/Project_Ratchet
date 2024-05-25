@@ -12,8 +12,7 @@
   background: none;
   color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
-  letter-spacing: 1.8px;
-  
+  letter-spacing: 0.1em;
   padding: .5em;
   transition: all 0.25s ease;
   outline: none;
@@ -85,28 +84,86 @@
 }
 }
 .slider__btn{
-padding: .5em;
 width: 40px;
 height: 40px;
+  &--next svg{
+    width: 40px;
+    height: 40px;
+  }
+  &--prev svg{
+    margin-left: 20px;
+    width: 40px;
+    height: 40px;
+  }
 }
+@media(min-width: 760px){
+  .slider__btn{
+    width: 60px;
+    height: 60px;
+      &--next svg{
+        width: 60px;
+        height: 60px;
+        margin-left: 60px;
+      }
+      &--prev svg{
+        margin-left: 60px;
+        width: 60px;
+        height: 60px;
+      }
+    }
+}
+@media(min-width: 1024px){
+  .slider__btn{
+      &--next svg{
+        margin-left: 60px;
+      }
+      &--prev svg{
+        margin-left: 100px;
+      }
+    }
+}
+@media(min-width: 1440px){
+  .slider__btn--next svg {
+    margin-left: 60px;
+    transition: fill 0.3s; /* Ajoutez une transition pour le SVG */
+  }
+  
+  .slider__btn--next svg path {
+    fill: $c-text; /* Couleur de remplissage initiale pour le chemin */
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: fill 0.3s; /* Ajoutez une transition pour le chemin */
+  }
+  
+  .slider__btn--next svg:hover {
+    cursor: pointer;
+    fill: $c-text; /* Couleur de remplissage au survol pour le SVG */
+  }
+  
+  .slider__btn--next svg:hover path {
+    fill: black; /* Couleur de remplissage au survol pour le chemin */
+  }
+  
+  
 
+  
 
-//pour les tabs 
-
-.tab__btn{
-font-family: 'Titillium';
-font-size: 20px;
-opacity: 0.5;
-}
-.tab--active{
-opacity: 1;
-}
-@media (min-width: 1024px){
-.tab__btn:not(.tab--active){
-  opacity: 1;
-  cursor: pointer;
-}
-.tab__btn.tab--active{
-  cursor: default;
-}
+  .slider__btn--prev svg {
+    margin-left: 100px;
+    transition: fill 0.3s; /* Ajoutez une transition pour le SVG */
+  }
+  
+  .slider__btn--prev svg path {
+    fill: $c-text; /* Couleur de remplissage initiale pour le chemin */
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: fill 0.3s; /* Ajoutez une transition pour le chemin */
+  }
+  
+  .slider__btn--prev svg:hover {
+    cursor: pointer;
+    fill: $c-text; /* Couleur de remplissage au survol pour le SVG */
+  }
+  
+  .slider__btn--prev svg:hover path {
+    fill: black; /* Couleur de remplissage au survol pour le chemin */
+  }
 }

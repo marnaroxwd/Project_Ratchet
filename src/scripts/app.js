@@ -75,25 +75,18 @@ function updateSlide(newSlideEl){
     exploreLink.setAttribute("href", exploreURL);
 }
 
-
-
-
-
-
-
-
-
 const modalTriggers = document.querySelectorAll('.modal__trigger');
 
 if (modalTriggers.length > 0) {
-    // Associe chaque élément à sa modal correspondante
+    // Associez chaque déclencheur à sa modal correspondante
     const modals = {};
     modalTriggers.forEach(trigger => {
         const modalId = trigger.getAttribute('data-modal-id');
         const modal = document.getElementById(`modal-${modalId}`);
         if (modal) {
+            const modalBackground = modal.querySelector('.modal__background');
             const modalContent = modal.querySelector('.modal__content');
-            modals[modalId] = { modal, modalContent };
+            modals[modalId] = { modal, modalBackground, modalContent };
         }
     });
 
@@ -107,20 +100,22 @@ if (modalTriggers.length > 0) {
                 // Ferme toutes les autres modales
                 Object.values(modals).forEach(otherModal => {
                     if (otherModal.modal !== modal) {
-                        otherModal.modal.classList.remove('modal__active');
+                        otherModal.modalContent.classList.add('modal__content--close');                        
                         otherModal.modal.classList.add('modal__close');
+                        otherModal.modal.classList.remove('modal__active');
                         otherModal.modalContent.classList.remove('modal__content--active');
-                        otherModal.modalContent.classList.add('modal__content--close');
+                        
                     }
                 });
 
                 // Gère l'état de la modal actuelle
                 if (modal.classList.contains('modal__active')) {
                     modal.classList.remove('modal__active');
+                    modalContent.classList.add('modal__content--close');
                     modal.classList.add('modal__close');
                     modalContent.classList.remove('modal__content--active');
-                    modalContent.classList.add('modal__content--close');
                 } else {
+                    modalContent.classList.remove('modal__content--close');
                     modal.classList.remove('modal__close');
                     modal.classList.add('modal__active');
                     if (modal.classList.contains('modal__default-state')) {
@@ -139,57 +134,30 @@ if (modalTriggers.length > 0) {
                 const modalId = button.closest('.modal').getAttribute('id').replace('modal-', '');
                 const { modal, modalContent } = modals[modalId];
                 if (modal && modalContent) {
+                    modalContent.classList.add('modal__content--close');
                     modal.classList.add('modal__close');
                     modal.classList.remove('modal__active');
                     modalContent.classList.remove('modal__content--active');
-                    modalContent.classList.add('modal__content--close');
+
                 }
             });
         });
     }
 }
+var acc = document.getElementsByClassName("accordion__btn");
+var i;
 
-
-let button = document.querySelectorAll(".tab__btn")
-
-for(let bouton of button){
-    bouton.addEventListener('click', buttonTrigger)
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var accordion = this.nextElementSibling;
+    if (accordion.style.maxHeight){
+      accordion.style.maxHeight = null;
+    } else {
+      accordion.style.maxHeight = accordion.scrollHeight + "px";
+      // Faire défiler jusqu'à l'élément actif après l'ouverture du accordion
+      accordion.scrollIntoView({behavior: "smooth", block: "nearest"});
+    } 
+  });
 }
 
-function buttonTrigger (event){
-
-    // Désactiver tous les liens actifs
-    let list = event.currentTarget.closest("ul")
-    let activeButtons = list.querySelectorAll(".tab--active");
-    for(let activeButton of activeButtons){
-        activeButton.classList.remove("tab--active")  
-        activeButton.parentElement.classList.remove("tab__el--active")  // Ajouté
-    }
-
-    let btn = list.querySelectorAll(".tab__btn")
-    for (let btnTab of btn){
-        let btnId = btnTab.getAttribute('data-target');
-        let btnElement = document.querySelector("#"+btnId);
-        btnElement.classList.add('tab__content--hidden');
-    }
-
-    // Marquer le lien cliqué comme actif
-    let clickedButton = event.currentTarget;
-    clickedButton.classList.add("tab--active");
-    clickedButton.parentElement.classList.add("tab__el--active");  // Ajouté
-
-    let contentClass = clickedButton.getAttribute("data-target");
-    let content = document.querySelector("#"+contentClass);
-    content.classList.remove("tab__content--hidden");
-}
-
-window.addEventListener('DOMContentLoaded', (event) => {
-    let tab1 = document.getElementById("tab--1");
-    let tab2 = document.getElementById("tab--2");
-    let tab3 = document.getElementById("tab--3");
-
-    let height = tab1.offsetHeight;
-
-    tab2.style.height = height + "px";
-    tab3.style.height = height + "px";
-});

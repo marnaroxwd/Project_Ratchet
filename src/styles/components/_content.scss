@@ -41,7 +41,11 @@
         font-size: 38px;
     }
 
-
+    &__next{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     &__image{
         max-width: 100%;
         &--border{
@@ -55,6 +59,17 @@
         }
         &--2{
             margin-bottom: 80px;
+        }
+        &--container{
+            margin-top: 40px;
+            margin-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        &--el{
+            margin-bottom: 20px;
         }
     }
     &__list{
@@ -78,7 +93,9 @@
         }
     }
 
+
 }
+
 .clank__séparation{
     &::before{
         content: "";
@@ -124,6 +141,9 @@
         &__image{
             place-self: center;
             grid-column: 3/7;
+        }
+        &__next{
+            grid-column: 1/9;
         }
     }
 
@@ -187,6 +207,9 @@
                 margin-bottom: 120px;
             }
         }
+        &__next{
+            grid-column: 1/11;
+        }
     }
 
     .clank__séparation{
@@ -219,7 +242,7 @@
         background-image: url('../../assets/images/clank_side.svg');
     }
     
-    
+
     
 
     .content{
@@ -243,6 +266,11 @@
                 grid-column: 4/8;
                 place-self: center;
             }
+            &--contained{
+                width: 60%;
+            }
+
+
         }
     }
 

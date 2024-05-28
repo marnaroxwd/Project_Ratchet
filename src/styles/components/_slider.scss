@@ -5,6 +5,7 @@
   overflow: hidden;
 &__list{
   height: 100vh;
+  overflow: hidden;
 }
 &__el{
   height: 100vh;
@@ -16,7 +17,7 @@
         background-image: url(../../assets/images/fastoon.png);
       }
       &--veldin{
-        background-image: url(../../assets/images/Veldin.png);
+        background-image: url(../../assets/images/veldin.png);
       }
       &--grelbin{
         background-image: url(../../assets/images/Grelbin.png);
@@ -32,6 +33,7 @@
     top: 20vh;
     position: absolute;
     margin-left: 1em;
+    margin-right: 1em;
   }
   &__background{
     position: absolute;
@@ -171,8 +173,8 @@
 @media(min-width: 1440px){
 .slider{
   &__background{
-    background-size: 100%;
-    left: 25%;
+    background-size: 90%;
+    left: 30%;
     top: -30%;
   }
   &__title{

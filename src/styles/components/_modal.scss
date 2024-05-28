@@ -57,26 +57,53 @@
     width: 80%;
     opacity: 0; /* Start hidden */
     transform: scale(0); /* Start with zoomed out */
-    
-    animation: zoomOut 1s forwards; /* Animation de fermeture pour le contenu */
+    position: relative;
+    animation: zoomOut 0.8s forwards; /* Animation de fermeture pour le contenu */
 
     &--active {
       transform: scale(1); /* Normal scale when active */
-      animation: zoomIn 1s forwards;
-      animation-delay: 1s; /* Delay to start after background animation ends */
+      animation: zoomIn 0.8s forwards;
+      animation-delay: 0.8s; /* Delay to start after background animation ends */
     }
+
+  }
+  &__title{
+    margin-top: 0;
   }
   &__close {
-    animation: unfoldOut 1s forwards;
-    animation-delay: 1s; /* Ajoutez un délai pour que cette animation commence après la fin de zoomOut */
+    animation: unfoldOut 0.8s forwards;
+    animation-delay: 0.8s; /* Ajoutez un délai pour que cette animation commence après la fin de zoomOut */
   }
   &__default-state {
     display: none;
   }
   &__img{
     max-width: 70%;
+    margin-bottom: 1em;
   }
 }
+
+.modal__close-button {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  //style par défaut
+  padding: 0;
+  border: 0;
+  background-color: inherit;
+  cursor: pointer;
+  background-image: url(../../assets/images/closebtn.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
 @media(min-width: 760px){
   .modal{
     &__img{
@@ -91,9 +118,10 @@
   .modal{
     &__img{
       max-width: 50%;
+      margin-bottom: 2em;
     }
     &__content{
-      width: 60%;
+      width: 40%;
     }
   }
 }

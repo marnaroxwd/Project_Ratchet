@@ -1,6 +1,6 @@
 .scrollnav {
-    background-color: #3E0A68;
-    box-shadow: 0 8px 8px -6px #3E0A68;
+    background-color: rgba($color: #29295F, $alpha: 0.6);
+    border-bottom: solid 1px $c-text;
     padding: 25px;
     padding-left: 20px;
     position: sticky;
@@ -23,7 +23,7 @@
 
 .nav__el {
     font-size: 25px;
-    margin-right: 40px;
+    margin-right: 60px;
     position: relative; // Position relative pour le pseudo-élément
 
     & a {

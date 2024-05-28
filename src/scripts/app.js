@@ -39,6 +39,12 @@ function nextSlide(){
 }
 
 
+
+
+
+
+
+
 // Mettre à jour la fonction updateSlide pour appeler updateIndicators
 function updateSlide(newSlideEl){
     let activeSlideEL = document.querySelector(".slider__el--show");

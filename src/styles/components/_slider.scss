@@ -9,15 +9,18 @@
 }
 &__el{
   height: 100vh;
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
   &--show{
     height: 100%;
 
-    .slider__background{
+    .slider__planet{
       &--fastoon{
         background-image: url(../../assets/images/fastoon.png);
       }
       &--veldin{
-        background-image: url(../../assets/images/veldin.png);
+        background-image: url(../../assets/images/Veldin-copie.png);
       }
       &--grelbin{
         background-image: url(../../assets/images/Grelbin.png);
@@ -37,29 +40,71 @@
   }
   &__background{
     position: absolute;
+    height: 500%;
+    width: 250%;
+    top: -200%;
+    left: 25%;
+    scale: (0.5);
+    transform: translateX(50%);
+    transition: .5s;
+  }
+  &__planet{
     background-repeat: no-repeat;
-    background-size: 300%;
-    height: 170%;
+    background-size: 100%;
+    background-position: center;
     width: 100%;
-    top: -20%;
-    left: 15%;
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
   }
   &__title{
     font-family: 'Space';
     font-weight: 200;
     font-size: 31px;
     margin: 0;
+    transform: translateX(-100%);
+    transition: .7s;
+    overflow: hidden;
+    & span{
+      display: block;
+      transform: translateX(100%);
+      transition: .7s;
+    }
+
+    
     &--game{
       font-family: 'Moon';
       font-weight: 100;
       font-size: 25px;
       margin: 0;
+      transform: translateX(-100%);
+      transition: .7s;
+      transition-delay: .3s;
+      overflow: hidden;
+      & span{
+        display: block;
+        transform: translateX(100%);
+        transition: .7s;
+        
+      transition-delay: .3s;
+      }
     }
   }
   &__description{
+    position: relative;
     margin-top: 40px;
     margin-bottom: 50px;
-    
+    transform: translateX(-100%);
+    transition: .5s;
+    transition-delay: .6s;
+    overflow: hidden;
+    z-index: 10;
+    & span{
+      display: block;
+      transform: translateX(100%);
+      transition: .5s;
+      transition-delay: .6s;
+    }
   }
   &__controls{
     bottom: 15vh;
@@ -82,34 +127,71 @@
   padding: 0;
   list-style: none;
 }
-.slider__list, .slider__el{
+
+/* animation*/
+.slider__el .slider__explore{
+  opacity: 0;
   pointer-events: none;
 }
-.slider__list, .slider__el--show{
+.slider__el--show .slider__explore{
+  opacity: 1;
+  
   pointer-events: all;
 }
 
-/* animation*/
-.slider__el .slider__content{
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(50px);
-  /*easings.net*/
-  transition: .3s ease-out;
+.slider__el--show .slider__background{
+  scale: (1);
+  transform: translateX(0%);
+  transition: .5s;
+}
+
+.slider__el--show ~ .slider__el .slider__background{
+  scale: (1.5);
+  transform: translateX(50%);
+  transition: .5s;
+}
+
+.slider__el--show .slider__planet{
+  animation: planet 720s linear infinite;
 }
 
 
 
-.slider__el--show .slider__content{
+.slider__el--show .slider__title,
+.slider__el--show .slider__title span{
   opacity: 1;
   pointer-events: all;
   visibility: visible;
+  transition-delay: .9s;
   transform: translateX(0);
+}
+.slider__el--show .slider__title--game,
+.slider__el--show .slider__title--game span{
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+  transition-delay: 1.2s;
+  transform: translateX(0);
+}
+
+.slider__el--show .slider__description,
+.slider__el--show .slider__description span{
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+  transition-delay: 1.5s;
+  transform: translateX(0);
+}
+
+.slider__el--show .slider__explore{
+  pointer-events: all;
 }
 @media(min-width: 760px){
   .slider{
-    &__background{
-      background-size: 200%;
+    &__bakground{
+      height: 450%;
+      width: 225%;
+      top: -175%;
     }
     &__title{
       font-size: 47px;
@@ -137,9 +219,10 @@
 @media(min-width: 1024px){
   .slider{
     &__background{
-      background-size: 100%;
-      left: 25%;
-      top: -30%;
+      height: 300%;
+      width: 150%;
+      top: -100%;
+      left: 40%;
     }
     &__title{
       font-size: 58px;
@@ -173,9 +256,10 @@
 @media(min-width: 1440px){
 .slider{
   &__background{
-    background-size: 90%;
-    left: 30%;
-    top: -30%;
+    top: -60%;
+    left: 40%;
+    height: 210%;
+    width: 100%;
   }
   &__title{
     font-size: 58px;
@@ -190,6 +274,35 @@
     font-size: 31px;
     margin-top: 80px;
     margin-bottom: 90px;
+    width: 50%;
   }
 }
 }
+
+@keyframes planet{
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.5);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+
+
+/*
+
+li petit derrière AVANT
+li active visible
+li après active qui sont plus grand APRES
+
+.slider__el .planete{
+
+} AVANT
+.slider__el--show .planete{} VISIBLE
+.slider__el--show ~ .slider__el .planete {} APRES
+
+*/

@@ -49,16 +49,17 @@ function nextSlide(){
 function updateSlide(newSlideEl){
     let activeSlideEL = document.querySelector(".slider__el--show");
     let h2Element = newSlideEl.querySelector("h2");
-    let h2Text = h2Element.textContent.toLowerCase();
+    let spanElement = h2Element.querySelector('span');
+    let spanText = spanElement.textContent.toLowerCase();
     let slider = document.querySelector(".slider");
     let exploreLink = document.querySelector(".slider__explore");
-    let exploreURL = h2Text + ".html";
+    let exploreURL = spanText + ".html";
     activeSlideEL.classList.remove("slider__el--show");
     newSlideEl.classList.add("slider__el--show");
 
     slider.classList.remove(...Array.from(slider.classList).filter(cls => cls.startsWith("slider--")));
 
-    slider.classList.add("slider--" + h2Text);
+    slider.classList.add("slider--" + spanText);
 
     exploreLink.setAttribute("href", exploreURL);
 }

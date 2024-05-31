@@ -52,17 +52,16 @@ function updateSlide(newSlideEl){
     let spanElement = h2Element.querySelector('span');
     let spanText = spanElement.textContent.toLowerCase();
     let slider = document.querySelector(".slider");
-    let exploreLink = document.querySelector(".slider__explore");
-    let exploreURL = spanText + ".html";
     activeSlideEL.classList.remove("slider__el--show");
     newSlideEl.classList.add("slider__el--show");
 
     slider.classList.remove(...Array.from(slider.classList).filter(cls => cls.startsWith("slider--")));
 
     slider.classList.add("slider--" + spanText);
-
-    exploreLink.setAttribute("href", exploreURL);
 }
+
+
+
 
 const modalTriggers = document.querySelectorAll('.modal__trigger');
 
@@ -150,30 +149,34 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    var scrollnav = document.querySelector('.scrollnav');
-    var oldScrollY = 0;
-    var timer;
+// Initialisation de la navigation
+var scrollnav = document.querySelector('.scrollnav');
+var oldScrollY = 0;
+var timer;
 
-    window.addEventListener('scroll', function () {
-        clearTimeout(timer);
+window.addEventListener('scroll', function () {
+    clearTimeout(timer);
 
-        if (oldScrollY > window.scrollY || isBottomReached()) {
-            scrollnav.classList.remove('scrollnav--hide');
-        } else {
-            scrollnav.classList.add('scrollnav--hide');
-        }
-
-        timer = setTimeout(function () {
-            if (isBottomReached()) {
-                scrollnav.classList.remove('scrollnav--hide');
-            }
-        }, 3000);
-
-        oldScrollY = window.scrollY;
-    });
-
-    function isBottomReached() {
-        return window.innerHeight + window.scrollY >= document.body.offsetHeight;
+    if (oldScrollY > window.scrollY || isBottomReached()) {
+        scrollnav.classList.remove('scrollnav--hide');
+    } else {
+        scrollnav.classList.add('scrollnav--hide');
     }
+
+    timer = setTimeout(function () {
+        if (isBottomReached()) {
+            scrollnav.classList.remove('scrollnav--hide');
+        }
+    }, 3000);
+
+    oldScrollY = window.scrollY;
 });
+
+function isBottomReached() {
+    return window.innerHeight + window.scrollY >= document.body.offsetHeight;
+}
+
+// Initialisation au chargement de la page
+initScrollNav();
+
+

@@ -94,7 +94,7 @@
   border: 0;
   background-color: inherit;
   cursor: pointer;
-  background-image: url(../../assets/images/closebtn.svg);
+  background-image: url(../assets/images/closebtn.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -121,7 +121,7 @@
       margin-bottom: 2em;
     }
     &__content{
-      width: 40%;
+      width: 45%;
     }
   }
 }

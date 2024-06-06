@@ -1,31 +1,453 @@
 <!DOCTYPE html>
-<html lang="en">
+<html" lang="fr">
     <head>
-        <title>DWMA project</title>
+        <title>TFA - Ratchet & Clank 3</title>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      
-        <meta name="description" content="">
-        <!-- Meta Partage -->
-        <!-- Favicon -->
+        <meta name="description" content="Retracer toute l'histoire de tous les jeux Ratchet & Clank">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-      
+       <!-- Meta Partage -->
+       <meta property="og:title" content="TFA - Ratchet & Clank 3">
+       <meta property="og:description" content="Retracer toute l'histoire de tous les jeux Ratchet & Clank">
+       <meta property="og:image" content="assets/images/partage_image.png">
+       <meta property="og:url" content="https://www.maxime-baldan.be/projets/tfa/marcadia.html">
+       <meta property="og:type" content="website">
+   
+        <!-- Favicon -->
+        <link rel="icon" href="assets/images/icon.png" type="image/png">
         <link rel="stylesheet" href="styles/app.css">
-      
         <script src="scripts/app.js" defer></script>
       </head>
-<body class="body__content">
 
-    <button class="menu-toggle">Menu</button>
-    <nav class="menu">
-        <ul class="menu__liste">
-            <li class="nav__el"><a href="index.html">Accueil</a></li>
-            <li class="nav__el"><a href="fastoon.html">Fastoon</a></li>
-            <li class="nav__el"><a href="veldin.html">Veldin</a></li>
-            <li class="nav__el"><a href="grelbin.html">Grelbin</a></li>
-            <li class="nav__el nav__el--active"><a href="marcadia.html">Marcadia</a></li>
-        </ul>
-    </nav>
 
+
+      <header class="scrollnav">
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__el"><a href="index.html">Accueil</a></li>
+                <li class="nav__el"><a href="fastoon.html">Fastoon</a></li>
+                <li class="nav__el"><a href="veldin.html">Veldin</a></li>
+                <li class="nav__el"><a href="grelbin.html">Grelbin</a></li>
+                <li class="nav__el nav__el--active"><a href="marcadia.html">Marcadia</a></li>
+            </ul>
+        </nav>
+    </header>
+<body class="content__body">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+
+<main>
+
+  <div class="content__container">
+        <video class="content__video" autoplay loop muted>
+            <source src="assets/videos/R&C2.mp4" type="video/mp4"/>
+            Votre navigateur ne supporte pas la balise vidéo.
+        </video>
+        <p class="content__legends content__legends--video">Trailer de gameplay de Ratchet & Clank 2</p>
+    </div>
+    <div class="grid__content">
+    
+        <section class="content__text content__text--1 content__text--big">
+            <h2 class="content__title">La rencontre de deux légendes</h2>
+            <p>
+                Après avoir sauvé la galaxie de Bogon, Ratchet et Clank se retrouvent encore une fois au chômage technique.
+                 Seulement cette fois-ci ils sont encore plus populaire qu’avant.
+            </p>
+            
+            <p>
+                Clank est la vedette d’une série à son effigie nommé «&#8239;Secret Agent Clank&#8239;» ce qui le rend beaucoup plus populaire que Ratchet.
+                 Son rôle à lui par contre c’est seulement être le chauffeur de Clank.
+            </p>
+
+        </section>
+        <img class="content__image content__image--1" src="assets/images/clank_blueprint.svg" alt="">
+
+        <section class="content__text content__text--2">
+            <p>Alors qu’ils profitaient de leur vacances sur <span class="modal__trigger" data-modal-id="megapolis">megapolis</span> ils reçoivent un appel où ils apprennent que Veldin est attaqué par les <span class="modal__trigger" data-modal-id="tyranoïde">Tyranoïde</span>,
+                 une race alien mené par le <span class="modal__trigger" data-modal-id="nefarious">Docteur Nefarious</span>.
+            </p>
+
+            <p>
+                Un savant robotique qui souhaite éliminer tous les êtres organiques pour instaurer le règne des robots dans la galaxie.
+            </p>
+            <p>
+                Ils viennent donc en aide aux rangers galactique pour vaincre les tyranoïdes. Durant cette mission ils sont contacté par le <span class="modal__trigger" data-modal-id="phyronix">président Phyronix</span> il les investis d’une mission:
+            </p>
+            <ul class="content__list">
+                <li class="content__el">Retrouver le seul homme qui a été capable de battre Nefarious par le passé.</li>
+            </ul>
+            <p>
+                Ils se lancent donc à la recherche de cette personne sur Florana,
+                 où ils se rendent compte que ce n’est nul autre que Capitaine Qwark.
+                  Seul problème, il a perdu la tête et se prend pour un singe de <span class="modal__trigger" data-modal-id="florana">florana</span>.
+            </p>
+            
+        </section>
+        <img class="content__image content__image--2 content__image--border" src="assets/images/ratchet_veldin.jpg" alt="">
+        
+        <section class="content__text content__text--3 clank__séparation"> 
+            <div class="content__déco">
+                <h2 class="content__title">Véritable visage</h2>
+                    <p>
+                        Suite à la demande de <span class="modal__trigger" data-modal-id="sasha">Sasha</span>, ils se dirige vers le <span class="modal__trigger" data-modal-id="phenix">Phénix</span> en ramenant Quark avec eux. Ils rejoignent donc officiellement le conflit contre Nefarious.
+                    </p>
+
+                    <p>
+                        Une fois à bord on nous explique que l’aide de Qwark est indispensable car il connaît les points faibles de l’ennemi. 
+                    </p>
+
+                    <p>
+                        Il faut donc trouver un moyen de lui rendre la mémoire, heureusement qu’à bord il y a des <span class="modal__trigger" data-modal-id="videofun">vidéos fun</span> qui retrace justement toutes les aventures de Qwark.
+                    </p>
+
+                    <p>
+                        En Voyant ces derniers, il récupère peu à peu la mémoire et c’est à ce moment que la force Qwark est formé et composé de:
+                    </p>
+                    <ul class="content__list">
+                        <li class="content__el">Ratchet&#8239;;</li>
+                        <li class="content__el">Clank&#8239;;</li>
+                        <li class="content__el">Sacha&#8239;;</li>
+                        <li class="content__el"><span class="modal__trigger" data-modal-id="skid">Skid McMarx</span>&#8239;;</li>
+                        <li class="content__el"><span class="modal__trigger" data-modal-id="helga">Helga</span>&#8239;;</li>
+                        <li class="content__el"><span class="modal__trigger" data-modal-id="al">Al</span>&#8239;;</li>
+                        <li class="content__el"><span class="modal__trigger" data-modal-id="skrunch">Skrunch</span>.</li>
+                    </ul>
+                    <p> 
+                        Étant donné que Qwark garde une certaines rancoeur envers Ratchet et Clank,
+                         il les envoient faire des missions quasi suicide pendant que le reste de l’escouade reste sur le pont à manger des frites.
+                    </p>
+
+                    <p>
+                        Après ces missions, ils ont appris que la célèbre chanteuse <span class="modal__trigger" data-modal-id="courtney">Courtney Gears</span> était liée à Nefarious.
+                         Clank l’a donc invité sur le tournage de sa série pour essayer de lui soutirer des informations. 
+                    </p>
+
+                    <p>
+                        Sauf qu’il s’est fait avoir et la chanteuse l’a kidnappée et livrée à Nefarious. Qui lui a fait un clone maléfique nommé Klunk pour berner la force Qwark.
+                    </p>
+
+                    <p>
+                        Klunk révèle à l’escouade que le savant se trouve sur un vaisseaux de guerre nommé le Léviathan en prétendant tenir cette information de Courtney.
+                    </p>
+                    <p>
+                        Au même moment la chanteuse à enlevé Skid et au moment où Ratchet arrive pour le sauver on découvre que le plan de Nefarious c’est de robotiser la galaxie grâce à son <span class="modal__trigger" data-modal-id="bioblitérateur">bioblitérateur</span>.
+                    </p>
+                    <p>
+                        Il est arrivé trop tard pour sauver Skid de ce destin, mais assez tôt pour neutraliser Courtney
+                    </p>
+                    <p>
+                        Suite à tous ces évènements la force Qwark décide d’infiltrer le <span class="modal__trigger" data-modal-id="leviathan">Léviathan</span>,
+                         ce qui était bien évidemment attendu par Nefarious et lance un séquence d’auto-destruction du vaisseaux.
+                    </p>
+                    <p>
+                        Ratchet, Skrunch et Klunk regagne donc leur navette, mais Qwark insiste pour continuer à fouiller le bureau de Nefarious.
+                         Klunk décide d'enclencher la sortie des navettes laissant Qwark derrière eux et l’explosion du Léviathan.
+                    </p>
+            </div>
+        </section>
+
+
+        <div class="accordion__séparation">      
+            
+            <button class="accordion__btn">Adieu Qwark</button>
+            <div class="accordion">
+                <div class="accordion__content">
+                    <p class="accordion__paragraph">
+                        Pour en apprendre plus sur les plans de Nefarious, Ratchet décide de jouer au vidéo fun.
+                         Il apprend ainsi que le savant fou avait pour projet de détruire <span class="modal__trigger" data-modal-id="metropolis">Métropolis</span> et que Qwark l’en a empêché.
+                    </p>
+                    <p class="accordion__paragraph">
+                        Il en déduit donc que c’est la prochaine cible de Nefarious.
+                         Il avait visé juste, mais arrive trop tard, tout Métropolis est robotisé mais il arrive à retrouver le vrai Clank et détruit sans hésiter Klunk.
+                    </p>
+                    <p class="accordion__paragraph">
+                        Pour trouver ce que Qwark cherchait dans le bureau, Ratchet et Clank décide d’aller inspecter le site de crash du Léviathan sur <span class="modal__trigger" data-modal-id="zeldren">Zeldren</span>.
+                    </p>
+                    <p class="accordion__paragraph">
+                        Sur place ils découvrent une capsule de sauvetage ainsi qu'un inforobot et réalisent que Qwark a réussi à s'échapper du Léviathan.
+                         Ils trouvent également un disque de données, ce que Qwark a trouvé dans le croiseur.
+                    </p>
+                </div>
+                <div class="accordion__img--container">
+                    <img class="accordion__image" src="assets/images/image 4.jpg" alt="">
+                </div>
+            </div>
+
+            <button class="accordion__btn">Nouvel objectif</button>
+            <div class="accordion">
+                <div class="accordion__content">
+                    <p class="accordion__paragraph">
+                        Après avoir retrouvé Qwark, il leur annonce qu'il a trop peur de la mort et n'a pas envie de retourner sur le champ de bataille.
+                    </p>
+                    <p class="accordion__paragraph">
+                        Après une tentative de discours pour le motiver, vraisemblablement en vain, Al a réussis à décoder le disque de donnée et trouve la localisation du bioblitérateur.
+                    </p>
+                    <p class="accordion__paragraph">
+                        Suite à sa destruction Ratchet découvre une arme encore plus redoutable et terrifiante situé sur <span class="modal__trigger" data-modal-id="mylon">Mylon</span>.
+                    </p>
+                    <p class="accordion__paragraph">
+                        Le duo de héro affrontent donc Nefarious qui finit par se réfugié dans sa machine qui se transforme en robot géant.
+                    </p>
+                    <p class="accordion__paragraph">
+                        Ratchet et Clank sont rejoint par Qwark pour le dernier combat. Et à l'issu de celui-ci le robot explose et envoie Nefarious et <span class="modal__trigger" data-modal-id="lawrence">Lawrence</span> sur un astéroïde.
+                    </p>
+                </div>
+                <div class="accordion__img--container">
+                    <img class="accordion__image " src="assets/images/ratchet_veldin.jpg" alt="">
+                    <p class="content__legends ">Ratchet très énervé envers Clank</p>
+                </div>
+            </div>
+
+            <button class="accordion__btn">Fun fact</button>
+            <div class="accordion accordion--duo">
+                <div class="accordion__content">
+                    <p class="accordion__paragraph">
+                        Dans les vidéos fun il est possible de changer la tenue de qwark et de le mettre en tutu. Pour cela il faut une combinaison de touche spécifique à faire:
+                        <ul class="content__list">
+                            <li class="content__el">Haut&#8239;;</li>
+                            <li class="content__el">Haut&#8239;;</li>
+                            <li class="content__el">Bas&#8239;;</li>
+                            <li class="content__el">Bas&#8239;;</li>
+                            <li class="content__el">Gauche&#8239;;</li>
+                            <li class="content__el">Droite&#8239;;</li>
+                            <li class="content__el">Rond&#8239;;</li>
+                            <li class="content__el">Carré&#8239;;</li>
+                            <li class="content__el">Carré.</li>
+                        </ul>
+                    </p>
+                    <div class="accordion__img--container">
+                        <img class="accordion__image" src="assets/images/marcadia/qwark_tutu.jpg" srcset="assets/images/marcadia/qwark_tutu@2x.jpg 2x" alt="Ratchet Angry">
+                        <p class="content__legends">Tenue secrète de Qwark</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content__next">
+            <a class="content__link" href="marcadia.html"><span class="content__link--line"></span>Ratchet 3</a>
+        </div>
+    </div>
+</main>
+
+    
+    <div id="modal-megapolis" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Megapolis</h2>
+                <img class="modal__img" src="assets/images/marcadia/megapolis.png" srcset="assets/images/marcadia/megapolis@2x.png 2x" alt="">
+                <p>Mégapole où se trouve l'appartement de CLank et le bureau de FizzWidget</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal-tyranoïde" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Tyranoïde</h2>
+                <img class="modal__img" src="assets/images/marcadia/tyranoide.png" srcset="assets/images/marcadia/tyranoide@2x.png 2x" alt="">
+                <p>Race alien originaire de Tyranosis. Malgré une technologie très avancé, ils n'en restent pas moins très primitif</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal-nefarious" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Docteur Nefarious</h2>
+                <img class="modal__img" src="assets/images/marcadia/Nefarious.png" srcset="assets/images/marcadia/Nefarious@2x.png 2x" alt="">
+                <p>Le Dr Nefarious est l'un des méchants principaux de la série. Il est toujours accompagné de son serviteur Lawrence. Malgré que ce soit mainteannt un robot, il lui manque certains neurones</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-phyronix" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Président Phyronix</h2>
+                <img class="modal__img" src="assets/images/marcadia/Phyronix.png" srcset="assets/images/marcadia/Phyronix@2x.png 2x" alt="">
+                <p>Le président Phyronix est le président de Marcadia et un fan inconditionnel de la série de Clank.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-florana" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Florana</h2>
+                <img class="modal__img" src="assets/images/marcadia/Florana.png" srcset="assets/images/marcadia/Florana@2x.png 2x" alt="">
+                <p>Florana est une planète forestière et tropicale. On dit que de terrible créatures y vivent.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-sasha" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Sasha</h2>
+                <img class="modal__img" src="assets/images/marcadia/sacha.png" srcset="assets/images/marcadia/sacha@2x.png 2x" alt="">
+                <p>La capitaine Sasha Phyronix est la commandante du Phénix</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-phenix" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Le Phénix</h2>
+                <img class="modal__img" src="assets/images/marcadia/phenix.png" srcset="assets/images/marcadia/phenix@2x.png 2x" alt="">
+                <p>Un des plus gros vaisseaux de la Galaxie de Solana et est le joyau de la flotte galactique.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-videofun" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Vidéo Fun</h2>
+                <img class="modal__img" src="assets/images/marcadia/video_fun.png" srcset="assets/images/marcadia/video_fun@2x.png 2x" alt="">
+                <p>Mini jeux vidéo qui retrace comment Qwark a arrêté la première fois Nefarious</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-skid" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Skid McMarx</h2>
+                <img class="modal__img" src="assets/images/marcadia/skid.png" srcset="assets/images/marcadia/skid@2x.png 2x" alt="">
+                <p>Apparu pour la première fois dans le premier opus, c'est un pro d'hoverboard et était admiré de Ratchet</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-helga" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Helga</h2>
+                <img class="modal__img" src="assets/images/marcadia/Helga.png" srcset="assets/images/marcadia/Helga@2x.png 2x" alt="">
+                <p>Coach personnel de Qwark. elle est apparu dans le premier opus pour nous donné un gadget.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-al" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Al</h2>
+                <img class="modal__img" src="assets/images/marcadia/Al.png" srcset="assets/images/marcadia/Al@2x.png 2x" alt="">
+                <p>C'est un savant, c'est grâce à lui qu'on a pu améliorer Clank pendant le premier jeu.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-skrunch" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Skrunch</h2>
+                <img class="modal__img" src="assets/images/marcadia/Skrunch.png" srcset="assets/images/marcadia/Skrunch@2x.png 2x" alt="">
+                <p>Singe de florana, compagnon de Qwark après qu'il ai perdu la tête</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-courtney" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Courtney Gears</h2>
+                <img class="modal__img" src="assets/images/marcadia/courtney.png" srcset="assets/images/marcadia/courtney@2x.png 2x" alt="">
+                <p>C'est une chanteuse robotique qui fera passer la propagande du Dr Nefarious à travers ses chansons</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-bioblitérateur" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Bioblitérateur</h2>
+                <img class="modal__img" src="assets/images/marcadia/Biobliterator.png" srcset="assets/images/marcadia/Biobliterator@2x.png 2x" alt="">
+                <p>Le Bioblitérateur était la "super arme secrète" du Dr. Nefarious pour transformer les vie organique en robot.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-leviathan" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Leviathan</h2>
+                <img class="modal__img" src="assets/images/marcadia/leviathan.png" srcset="assets/images/marcadia/leviathan@2x.png 2x" alt="">
+                <p>Croiseur galactique du Dr Nefarious</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-metropolis" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Metropolis</h2>
+                <img class="modal__img" src="assets/images/marcadia/metropolis.png" srcset="assets/images/marcadia/metropolis@2x.png 2x" alt="">
+                <p>Capitale économique de la Galaxie de Solana et plus grande ville aussi.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-zeldren" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Zeldren</h2>
+                <img class="modal__img" src="assets/images/marcadia/zeldren.png" srcset="assets/images/marcadia/zeldren@2x.png 2x" alt="">
+                <p>Planète primitives, pas grand chose à dire sur cette planète.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-mylon" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Mylon</h2>
+                <img class="modal__img" src="assets/images/marcadia/mylon.png" srcset="assets/images/marcadia/mylon@2x.png 2x" alt="">
+                <p>Mylon est un monde désolé et industriel où Nefarious y cache son dernier Bioblitérateur</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-lawrence" class="modal modal__close modal__default-state">
+        <div class="modal__background ">
+            <div class="modal__content">
+                <button class="modal__close-button">Fermer</button>
+                <h2 class="modal__title">Lawrence</h2>
+                <img class="modal__img" src="assets/images/marcadia/Lawrence.png" srcset="assets/images/marcadia/Lawrence@2x.png 2x" alt="">
+                <p>C'est le majordome robotique du Dr.Nefarious. Son travail quotidien consiste généralement à désintégrer les ennemis de son maître.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    
 </body>
+<footer>
+    <ul>
+        <li><a href="credit.html">Crédits</a></li>
+        <li><a href="https://maxime-baldan.be/">Maxime Baldan</a>
+        </li>
+    </ul>
+</footer>
 </html>

@@ -8,6 +8,9 @@
     transform: translateY(0); 
     transition: transform 0.3s ease-in-out; 
     z-index: 10;
+    &--novid{
+        margin-bottom: 40px;
+    }
 }
 
 .nav__list {

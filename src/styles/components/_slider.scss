@@ -17,19 +17,38 @@
 
     .slider__planet{
       &--fastoon{
-        background-image: url(../../assets/images/fastoon.png);
+        background-image: url(../assets/images/fastoon.png);
       }
       &--veldin{
-        background-image: url(../../assets/images/Veldin-copie.png);
+        background-image: url(../assets/images/Veldin-copie.png);
       }
       &--grelbin{
-        background-image: url(../../assets/images/Grelbin.png);
+        background-image: url(../assets/images/Grelbin.png);
       }
       &--marcadia{
-        background-image: url(../../assets/images/marcadia.png);
+        background-image: url(../assets/images/marcadia.png);
 
       }
     }
+    @media only screen and (min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi),
+       only screen and (min-resolution: 2dppx) {
+  .slider__planet {
+    &--fastoon {
+      background-image: url(../assets/images/fastoon@2x.png);
+    }
+    &--veldin {
+      background-image: url(../assets/images/Veldin-copie@2x.png);
+    }
+    &--grelbin {
+      background-image: url(../assets/images/Grelbin@2x.png);
+    }
+    &--marcadia {
+      background-image: url(../assets/images/marcadia@2x.png);
+    }
+  }
+}
+
   }
 }
   &__content{
@@ -76,12 +95,12 @@
       font-weight: 100;
       font-size: 25px;
       margin: 0;
-      transform: translateX(-100%);
+      transform: translateX(-101%);
       transition: .7s;
       overflow: hidden;
       & span{
         display: block;
-        transform: translateX(100%);
+        transform: translateX(101%);
         transition: .7s;
 
       }
@@ -91,13 +110,13 @@
     position: relative;
     margin-top: 40px;
     margin-bottom: 50px;
-    transform: translateX(-100%);
+    transform: translateX(-101%);
     transition: .6s;
     overflow: hidden;
     z-index: 10;
     & span{
       display: block;
-      transform: translateX(100%);
+      transform: translateX(101%);
       transition: .6s;
     }
   }

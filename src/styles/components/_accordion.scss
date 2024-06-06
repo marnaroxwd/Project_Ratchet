@@ -31,6 +31,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      &-qwark{
+        margin-top: 20px;
+      }
 
     }
 
@@ -78,6 +81,10 @@
     &__img--container{
       margin: auto 0;
       width: 45%;
+      &-qwark{
+        margin: auto;
+        margin-top: 40px;
+      }
     }
     &__img-container--duo{
       display: flex;

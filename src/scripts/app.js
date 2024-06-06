@@ -64,6 +64,7 @@ function updateSlide(newSlideEl){
 
 
 const modalTriggers = document.querySelectorAll('.modal__trigger');
+const scrollNav = document.querySelector('.scrollnav');
 
 if (modalTriggers.length > 0) {
     // Associez chaque déclencheur à sa modal correspondante
@@ -88,11 +89,10 @@ if (modalTriggers.length > 0) {
                 // Ferme toutes les autres modales
                 Object.values(modals).forEach(otherModal => {
                     if (otherModal.modal !== modal) {
-                        otherModal.modalContent.classList.add('modal__content--close');                        
+                        otherModal.modalContent.classList.add('modal__content--close');
                         otherModal.modal.classList.add('modal__close');
                         otherModal.modal.classList.remove('modal__active');
                         otherModal.modalContent.classList.remove('modal__content--active');
-                        
                     }
                 });
 
@@ -102,6 +102,7 @@ if (modalTriggers.length > 0) {
                     modalContent.classList.add('modal__content--close');
                     modal.classList.add('modal__close');
                     modalContent.classList.remove('modal__content--active');
+                    if (scrollNav) scrollNav.classList.remove('scrollnav--hide'); // Afficher la nav
                 } else {
                     modalContent.classList.remove('modal__content--close');
                     modal.classList.remove('modal__close');
@@ -110,10 +111,19 @@ if (modalTriggers.length > 0) {
                         modal.classList.remove('modal__default-state');
                     }
                     modalContent.classList.add('modal__content--active');
+                    if (scrollNav) scrollNav.classList.add('scrollnav--hide'); // Cacher la nav
                 }
             }
         });
     });
+
+    const closeModal = (modal, modalContent) => {
+        modalContent.classList.add('modal__content--close');
+        modal.classList.add('modal__close');
+        modal.classList.remove('modal__active');
+        modalContent.classList.remove('modal__content--active');
+        if (scrollNav) scrollNav.classList.remove('scrollnav--hide'); // Afficher la nav
+    };
 
     const closeButtons = document.querySelectorAll('.modal__close-button');
     if (closeButtons.length > 0) {
@@ -122,16 +132,36 @@ if (modalTriggers.length > 0) {
                 const modalId = button.closest('.modal').getAttribute('id').replace('modal-', '');
                 const { modal, modalContent } = modals[modalId];
                 if (modal && modalContent) {
-                    modalContent.classList.add('modal__content--close');
-                    modal.classList.add('modal__close');
-                    modal.classList.remove('modal__active');
-                    modalContent.classList.remove('modal__content--active');
-
+                    closeModal(modal, modalContent);
                 }
             });
         });
     }
+
+    Object.values(modals).forEach(({ modal, modalContent }) => {
+        if (modal) {
+            modal.addEventListener('click', (event) => {
+                if (!modalContent.contains(event.target)) {
+                    closeModal(modal, modalContent);
+                }
+            });
+        }
+    });
+
+    // Écouteur global pour la touche Échap
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            Object.values(modals).forEach(({ modal, modalContent }) => {
+                if (modal.classList.contains('modal__active')) {
+                    closeModal(modal, modalContent);
+                }
+            });
+        }
+    });
 }
+
+
+
 var acc = document.getElementsByClassName("accordion__btn");
 var i;
 
@@ -149,6 +179,54 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-// Initialisation de la navigation
 
 
+
+if (scrollNav) {
+    let lastScrollTop = 0;
+    const delta = 5;
+    const navbarHeight = scrollNav.offsetHeight;
+    const navList = document.querySelector('.nav__list');
+
+    const centerActiveNavEl = () => {
+        const activeEl = document.querySelector('.nav__el--active');
+        if (activeEl) {
+            const elLeft = activeEl.offsetLeft;
+            const elWidth = activeEl.offsetWidth;
+            const navWidth = navList.offsetWidth;
+            const scrollAmount = elLeft - (navWidth / 2) + (elWidth / 2);
+            navList.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+        }
+    };
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (Math.abs(lastScrollTop - scrollTop) <= delta) {
+            return;
+        }
+
+        if (scrollTop > lastScrollTop && scrollTop > navbarHeight) {
+            // Scroll vers le bas
+            scrollNav.classList.add('scrollnav--hide');
+        } else {
+            // Scroll vers le haut
+            scrollNav.classList.remove('scrollnav--hide');
+        }
+
+        // Si l'utilisateur est en bas de la page, afficher la nav
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            scrollNav.classList.remove('scrollnav--hide');
+        }
+
+        lastScrollTop = scrollTop;
+    });
+
+    // Call centerActiveNavEl whenever the active element might change
+    const observer = new MutationObserver(centerActiveNavEl);
+    const config = { attributes: true, childList: true, subtree: true };
+    observer.observe(navList, config);
+
+    // Initial call to center the active element
+    centerActiveNavEl();
+}

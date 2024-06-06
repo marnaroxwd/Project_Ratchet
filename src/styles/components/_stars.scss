@@ -10,6 +10,11 @@ $shadows-small: multiple-box-shadow(700);
 $shadows-medium: multiple-box-shadow(200);
 $shadows-big: multiple-box-shadow(100);
 
+.stars__zindex{
+  position: relative;
+  z-index: 0;
+}
+
 #stars {
   width: 1px;
   height: 1px;

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html" lang="en">
+<html lang="fr">
 <head>
     <title>TFA - Ratchet & Clank</title>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Retracer toute l'histoire de tous les jeux Ratchet & Clank">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +18,11 @@
     <link rel="stylesheet" href="styles/app.css">
     <script src="scripts/app.js" defer></script>
   </head>
+  <body class="content__body">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
       <header class="scrollnav">
         <nav class="nav">
             <ul class="nav__list">
@@ -29,17 +34,13 @@
             </ul>
         </nav>
     </header>
-<body class="content__body">
-    <div id="stars"></div>
-    <div id="stars2"></div>
-    <div id="stars3"></div>
 
 
 <main>
 
-  <div class="content__container">
+  <div class="content__container content__container--video">
         <video class="content__video" autoplay loop muted>
-            <source src="assets/videos/R&C_trailer.mp4" type="video/mp4"/>
+            <source src="assets/videos/R&C_trailer.mp4" type="video/mp4">
             Votre navigateur ne supporte pas la balise vidéo.
         </video>
         <p class="content__legends content__legends--video">Premier trailer du jeu ratchet & Clank</p>
@@ -47,7 +48,7 @@
     
     <div class="grid__content">
     
-        <section class="content__text content__text--1 content__text--big">
+        <div class="content__text content__text--1 content__text--big">
             <h2 class="content__title">La rencontre de deux légendes</h2>
             <p>
                 Le jeu commence sur la planète des <span class="modal__trigger" data-modal-id="blaargs">blaargs</span> dans&nbsp;une&nbsp;cinématique où l'on voit <span class="modal__trigger" data-modal-id="clank">Clank</span>, une anomalie.
@@ -55,19 +56,19 @@
             <p>
                 De base il devait être un robot de guerre au service du président Drek. et son «véritable nom» c'est <span class="modal__trigger" data-modal-id="xj-0461">XJ-0461</span>.
             </p>
-            <p>
+            <div>
                 Seulement gros soucis il tombe sur un enregistrement robot qui divulguent les plans de <span class="modal__trigger" data-modal-id="drek">Drek</span>:
                 <ul class="content__list">
                     <li class="content__el">Utilisé son armée pour détruire des planètes;</li>
                     <li class="content__el">Récupérer les morceau des planètes pour en créer une parfaite;</li>
                     <li class="content__el">Car leur planète d'origine est trop polluée et est devenue inhabitable.</li>
                 </ul>
-            </p>
+            </div>
             
-        </section>
-        <img class="content__image content__image--1" src="assets/images/clank_blueprint.svg" alt="">
+        </div>
+        <img class="content__image content__image--1" src="assets/images/clank_blueprint.svg" alt="schema de clank sous différent point de vue">
 
-        <section class="content__text content__text--2">
+        <div class="content__text content__text--2">
             <p>Terrifié par cette nouvelle Clank s’échappe de l’usine de fabrication et part à la recherche de “<span class="modal__trigger" data-modal-id="qwark">Qwark</span>” le héro de la galaxie.
                 Lors de sa fuite, il est poursuivi et s’écrase sur <span class="modal__trigger" data-modal-id="veldin">Veldin</span>,
                  planète sur laquelle il va rencontrer <span class="modal__trigger" data-modal-id="ratchet">Ratchet</span>.
@@ -82,12 +83,12 @@
                 Même s’il en à cure de ce qu’il va arriver aux autres planètes.
             </p>
             
-        </section>
+        </div>
         <div class="content__image-2--container">
-            <img class="content__image content__image--2 content__image--border" src="assets/images/veldin/ratchet_veldin.jpg" srcset="assets/images/veldin/ratchet_veldin@2x.jpg 2x" alt="Ratchet Veldin">
+            <img class="content__image content__image--2 content__image--border" src="assets/images/veldin/ratchet_veldin.jpg" srcset="assets/images/veldin/ratchet_veldin@2x.jpg 2x" alt="Ratchet qui répare les circuit de son vaisseau sur une caisse de boulon">
             <p class="content__legends">Ratchet qui prépare son vaisseau</p>
         </div>
-        <section class="content__text content__text--3 clank__séparation"> 
+        <div class="content__text content__text--3 clank__séparation"> 
             <div class="content__déco">
                 <h2 class="content__title">Qwark le félon</h2>
                     <p>
@@ -107,7 +108,7 @@
                         Étant donné que nos deux héros avaient déjà perturber les plans de Drek. Il avait envoyé Qwark mettre Ratchet et Clank hors d’état de nuire.
                     </p>
             </div>
-        </section>
+        </div>
 
 
         <div class="accordion__séparation">      
@@ -125,7 +126,7 @@
                     </p>
                 </div>
                 <div class="accordion__img--container">
-                    <img class="accordion__image" src="assets/images/veldin/Ratchet_angry.jpg" srcset="assets/images/veldin/Ratchet_angry@2x.jpg 2x" alt="Ratchet Angry">
+                    <img class="accordion__image" src="assets/images/veldin/Ratchet_angry.jpg" srcset="assets/images/veldin/Ratchet_angry@2x.jpg 2x" alt="Ratchet qui s'énerve envers clank le pointe du doigt et lui dit que l'inforobot sera peut être plus utile que lui">
                     <p class="content__legends">Ratchet très énervé envers Clank</p>
                 </div>
             </div>
@@ -145,7 +146,8 @@
                     </p>
                 </div>
                 <div class="accordion__img--container">
-                    <img class="accordion__image accordion__image--last" src="assets/images/veldin/reparation.jpg" srcset="assets/images/veldin/reparation@2x.jpg 2x" alt="Ratchet and Clank Reparation">
+                    <img class="accordion__image accordion__image--last" src="assets/images/veldin/reparation.jpg" srcset="assets/images/veldin/reparation@2x.jpg 2x" alt="Ratchet qui appelle clank «boite de conserve» pour l'interpelé et pour le réparer">
+                    <p class="content__legends">Ratchet rappelle Clank pour le réparer</p>
                 </div>
             </div>
 
@@ -159,19 +161,19 @@
                 </div>
                 <div class="accordion__img-container--duo">
                     <div class="accordion__img--group">
-                        <img class="accordion__image" src="assets/images/veldin/avant.jpg" srcset="assets/images/veldin/avant@2x.jpg 2x" alt="Avant la manipulation">
+                        <img class="accordion__image" src="assets/images/veldin/avant.jpg" srcset="assets/images/veldin/avant@2x.jpg 2x" alt="présentatrice alien avant la manipulation avec une petite poitrine">
                         <p class="content__legends">Avant la manipulation</p>
                     </div>
 
                     <div class="accordion__img--group">
-                        <img class="accordion__image" src="assets/images/veldin/apres.jpg" srcset="assets/images/veldin/apres@2x.jpg 2x" alt="Après la manipulation">
+                        <img class="accordion__image" src="assets/images/veldin/apres.jpg" srcset="assets/images/veldin/apres@2x.jpg 2x" alt="présentatrice alien avant la manipulation avec une grande poitrine">
                         <p class="content__legends ">Après la manipulation</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="content__next">
-            <a class="content__link" href="grelbin.html"><span class="content__link--line"></span>Prochain jeu</a>
+            <a class="content__link" href="grelbin.html"><span class="content__link--line"></span>Ratchet 2</a>
         </div>
     </div>
 </main>
@@ -185,7 +187,7 @@
         <div class="modal__content">
             <button class="modal__close-button">Fermer</button>
             <h2 class="modal__title">Blaargs</h2>
-            <img class="modal__img" src="assets/images/veldin/blaargs.png" srcset="assets/images/veldin/blaargs@2x.png 2x" alt="Blaargs">
+            <img class="modal__img" src="assets/images/veldin/blaargs.png" srcset="assets/images/veldin/blaargs@2x.png 2x" alt="un alien avec la peau rouge un combinaison spatiale et une arme">
             <p>C'est une race en danger, souvent formés pour devenir soldats, les blargs sont souvent peu intelligents.</p>
         </div>
     </div>
@@ -218,7 +220,7 @@
         <div class="modal__content">
             <button class="modal__close-button">Fermer</button>
             <h2 class="modal__title">Drek</h2>
-            <img class="modal__img" src="assets/images/veldin/Drek.png" srcset="assets/images/veldin/Drek@2x.png 2x" alt="Drek">
+            <img class="modal__img" src="assets/images/veldin/Drek.png" srcset="assets/images/veldin/Drek@2x.png 2x" alt="Président drek un blaargs avec un costard donc il fait plus intelligent">
             <p>Antagoniste principal de Ratchet & Clank. C'est un blaarg beaucoup plus intelligent que la moyenne et a pris la tête des siens pour accomplir son but.</p>
         </div>
     </div>
@@ -229,7 +231,7 @@
         <div class="modal__content">
             <button class="modal__close-button">Fermer</button>
             <h2 class="modal__title">Qwark</h2>
-            <img class="modal__img" src="assets/images/veldin/Qwark.png" srcset="assets/images/veldin/Qwark@2x.png 2x" alt="Qwark">
+            <img class="modal__img" src="assets/images/veldin/Qwark.png" srcset="assets/images/veldin/Qwark@2x.png 2x" alt="Qwark avec une tenue en latex verte qui lui colle à la peau et un gros menton il a aussi une antenne sur la tête">
             <p>Malgré son apparence colossale, Qwark n'est qu'un peureux et un peu bête. Mais au fond on l'aime bien</p>
         </div>
     </div>
@@ -240,7 +242,7 @@
         <div class="modal__content">
             <button class="modal__close-button">Fermer</button>
             <h2 class="modal__title">Veldin</h2>
-            <img class="modal__img" src="assets/images/veldin/Veldin_modal.png" srcset="assets/images/veldin/Veldin_modal@2x.png 2x" alt="Veldin">
+            <img class="modal__img" src="assets/images/veldin/Veldin_modal.png" srcset="assets/images/veldin/Veldin_modal@2x.png 2x" alt="Planète orange avec un peu d'eau vu de l'espace">
             <p>Première planète du premier jeu et planète natale de Ratchet</p>
         </div>
     </div>
@@ -251,7 +253,7 @@
         <div class="modal__content">
             <button class="modal__close-button">Fermer</button>
             <h2 class="modal__title">Ratchet</h2>
-            <img class="modal__img" src="assets/images/veldin/ratchet.png" srcset="assets/images/veldin/ratchet@2x.png 2x" alt="Ratchet">
+            <img class="modal__img" src="assets/images/veldin/ratchet.png" srcset="assets/images/veldin/ratchet@2x.png 2x" alt="Ratchet qui prends la pose">
             <p>C'est un lombax, héros principal de la licence. Le dernier de son espèce</p>
         </div>
     </div>
@@ -262,7 +264,7 @@
         <div class="modal__content">
             <button class="modal__close-button">Fermer</button>
             <h2 class="modal__title">Félon</h2>
-            <img class="modal__img" src="assets/images/veldin/Qwark.png" srcset="assets/images/veldin/Qwark@2x.png 2x" alt="Félon">
+            <img class="modal__img" src="assets/images/veldin/Qwark.png" srcset="assets/images/veldin/Qwark@2x.png 2x" alt="Qwark avec une tenue en latex verte qui lui colle à la peau et un gros menton il a aussi une antenne sur la tête">
             <p>Un félon est une personne qui trahit la confiance qu'on lui a accordée.</p>
         </div>
     </div>
@@ -273,7 +275,7 @@
         <div class="modal__content">
             <button class="modal__close-button">Fermer</button>
             <h2 class="modal__title">Umbris</h2>
-            <img class="modal__img" src="assets/images/veldin/Carte_Umbris.png" srcset="assets/images/veldin/Carte_Umbris@2x.png 2x" alt="Umbris">
+            <img class="modal__img" src="assets/images/veldin/Carte_Umbris.png" srcset="assets/images/veldin/Carte_Umbris@2x.png 2x" alt="carte de la zone du test ">
             <p>Planète sur laquelle Ratchet va passer son épreuve mortelle, voici à quoi ressemble la carte.</p>
         </div>
     </div>
@@ -284,18 +286,18 @@
         <div class="modal__content">
             <button class="modal__close-button">Fermer</button>
             <h2 class="modal__title">Monstre blaarg</h2>
-            <img class="modal__img" src="assets/images/veldin/monstre_blarg.png" srcset="assets/images/veldin/monstre_blarg@2x.png 2x" alt="Monstre Blaarg">
+            <img class="modal__img" src="assets/images/veldin/monstre_blarg.png" srcset="assets/images/veldin/monstre_blarg@2x.png 2x" alt="Monstre Blaarg qui fait 5x la taille de ratchet">
             <p>C'est un monstre blaarg originaire de la planète Orxon. On ignore encore comment il s'est retrouvé dans ce volcan.</p>
         </div>
     </div>
 </div>
-    
-</body>
 <footer>
     <ul>
         <li><a href="credit.html">Crédits</a></li>
         <li><a href="https://maxime-baldan.be/">Maxime Baldan</a>
         </li>
     </ul>
-</footer>
+</footer> 
+</body>
+
 </html>

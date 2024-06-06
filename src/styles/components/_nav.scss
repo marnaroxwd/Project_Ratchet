@@ -1,85 +1,83 @@
 .scrollnav {
-    background-color: rgba($color: #29295F, $alpha: 0.6);
+    background-color: rgba(41, 41, 95, 0.7);
     border-bottom: solid 1px $c-text;
     padding: 25px;
     padding-left: 20px;
-    position: sticky;
-    top: 0; 
-    transform: translateY(0); 
-    transition: transform 0.3s ease-in-out; 
-    z-index: 10;
-    &--novid{
-        margin-bottom: 40px;
-    }
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+    z-index: 15;
+    margin: 0;
 }
 
 .nav__list {
     display: flex;
     list-style: none;
     overflow-x: scroll;
-    &::-webkit-scrollbar {
-        display: none; 
-    }
-    -ms-overflow-style: none; 
-    scrollbar-width: none;
+}
+
+.nav__list::-webkit-scrollbar {
+    display: none;
 }
 
 .nav__el {
     font-size: 25px;
     margin-right: 60px;
-    position: relative; // Position relative pour le pseudo-élément
-
-    & a {
-        color: $c-text;
-        text-decoration: none;
-        transition: color 0.3s;
-        display: inline-block; // Nécessaire pour la transition du pseudo-élément
-
-        &::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px; // Épaisseur du soulignement
-            background: $c-text; // Couleur du soulignement
-            transition: width 0.3s ease-in-out;
-        }
-
-        &:hover::after {
-            width: 100%; // Largeur complète au survol
-        }
-    }
-    &--active {
-        & a::after{
-            width: 100%;
-        }
-        & a:hover{
-            cursor: default; 
-        }
-    }
-
+    position: relative;
 }
 
+.nav__el a {
+    color: $c-text;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: inline-block;
+}
 
-// Classe pour cacher la barre de navigation
+.nav__el a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $c-text;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav__el a:hover::after {
+    width: 100%;
+}
+
+.nav__el--active a::after {
+    width: 100%;
+}
+
+.nav__el--active a:hover {
+    cursor: default;
+}
+
 .scrollnav--hide {
     transform: translateY(-100%);
 }
 
-@media (min-width: 760px){
+@media (min-width: 760px) {
     .scrollnav {
         padding-left: 32px;
     }
-    .nav__el{
+
+    .nav__el {
         margin-right: 80px;
     }
 }
-@media (min-width: 1024px){
+
+@media (min-width: 1024px) {
     .scrollnav {
         padding-left: 72px;
     }
 }
-@media (min-width: 1440px){
+
+@media (min-width: 1440px) {
     .scrollnav {
         padding-left: 120px;
     }
-  }
+}

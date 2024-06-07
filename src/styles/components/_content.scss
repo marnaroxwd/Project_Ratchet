@@ -193,6 +193,17 @@
                 grid-column: 2/8;
             }
         }
+        &__image-1--container{
+            grid-column: 1/7;
+            width: 50%;
+        }
+
+        &__image-2--container{
+            grid-column: 1/7;
+            margin-bottom: 80px;
+            width: 50%;
+            place-self: center;
+        }
         &__image{
             place-self: center;
             grid-column: 3/7;

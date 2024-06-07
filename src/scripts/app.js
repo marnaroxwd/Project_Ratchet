@@ -38,9 +38,38 @@ function nextSlide(){
     updateSlide(nextSlideEl);
 }
 
+if (document.querySelector(".slider__indicators")) {
+const sliderEls = document.querySelectorAll('.slider__el');
+const indicators = document.querySelectorAll('.slider__indicator');
 
+let currentIndex = 0;
 
+function updateIndicators() {
+  indicators.forEach((indicator, index) => {
+    indicator.classList.toggle('slider__indicator--active', index === currentIndex);
+  });
+}
 
+function showSlide(index) {
+  sliderEls.forEach((el, i) => {
+    el.classList.toggle('slider__el--show', i === index);
+  });
+  currentIndex = index;
+  updateIndicators();
+}
+
+document.querySelector('.slider__btn--next').addEventListener('click', () => {
+  showSlide((currentIndex + 1) % sliderEls.length);
+});
+
+document.querySelector('.slider__btn--prev').addEventListener('click', () => {
+  showSlide((currentIndex - 1 + sliderEls.length) % sliderEls.length);
+});
+
+// Initial update
+updateIndicators();
+
+}
 
 
 

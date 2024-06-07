@@ -16,6 +16,9 @@
     display: flex;
     list-style: none;
     overflow-x: scroll;
+    &:last-child{
+        padding-right: 60px;
+    }
 }
 
 .nav__list::-webkit-scrollbar {
@@ -24,8 +27,10 @@
 
 .nav__el {
     font-size: 25px;
+    width: 100%;
     margin-right: 60px;
     position: relative;
+
 }
 
 .nav__el a {

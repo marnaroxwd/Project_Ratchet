@@ -46,15 +46,15 @@ footer{
     & ul{
       display: flex;
       justify-content: space-around;
-    }
-    & li{
       list-style: none;
     }
-    & a {
-      color: $c-text;
-      text-decoration: none;
-      transition: color 0.3s;
-      display: inline-block; // Nécessaire pour la transition du pseudo-élément
+    & li{
+      & a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+        display: inline-block; // Nécessaire pour la transition du pseudo-élément  
+    }
 
       &::after {
           content: '';

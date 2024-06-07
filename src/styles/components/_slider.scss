@@ -1,63 +1,96 @@
-.slider{
+.slider {
   width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
-&__list{
-  height: 100vh;
-  overflow: hidden;
-}
-&__el{
-  height: 100vh;
-  width: 100%;
-  position: absolute;
-  pointer-events: none;
-  &--show{
-    /*height: 100%;*/
 
-    .slider__planet{
-      &--fastoon{
+  &__list {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &__indicators {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    position: absolute;
+    bottom: 10vh;
+    left: 50%;
+    padding: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &__indicator {
+    border-radius: 8px;
+    width: 25px;
+    height: 3px;
+    background-color: $c-text;
+    opacity: 0.5;
+    margin: 0 5px;
+    transition: opacity 0.3s ease;
+
+    &--active {
+      background-color: $c-text;
+      box-shadow: 0 0 10px;
+      opacity: 1;
+    }
+  }
+
+  &__el {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    pointer-events: none;
+
+    .slider__planet {
+      &--fastoon {
         background-image: url(../assets/images/fastoon.png);
       }
-      &--veldin{
+
+      &--veldin {
         background-image: url(../assets/images/Veldin-copie.png);
       }
-      &--grelbin{
+
+      &--grelbin {
         background-image: url(../assets/images/Grelbin.png);
       }
-      &--marcadia{
-        background-image: url(../assets/images/marcadia.png);
 
+      &--marcadia {
+        background-image: url(../assets/images/marcadia.png);
+      }
+
+      @media only screen and (min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+        .slider__planet {
+          &--fastoon {
+            background-image: url(../assets/images/fastoon@2x.png);
+          }
+
+          &--veldin {
+            background-image: url(../assets/images/Veldin-copie@2x.png);
+          }
+
+          &--grelbin {
+            background-image: url(../assets/images/Grelbin@2x.png);
+          }
+
+          &--marcadia {
+            background-image: url(../assets/images/marcadia@2x.png);
+          }
+        }
       }
     }
-    @media only screen and (min-device-pixel-ratio: 2),
-       only screen and (min-resolution: 192dpi),
-       only screen and (min-resolution: 2dppx) {
-  .slider__planet {
-    &--fastoon {
-      background-image: url(../assets/images/fastoon@2x.png);
-    }
-    &--veldin {
-      background-image: url(../assets/images/Veldin-copie@2x.png);
-    }
-    &--grelbin {
-      background-image: url(../assets/images/Grelbin@2x.png);
-    }
-    &--marcadia {
-      background-image: url(../assets/images/marcadia@2x.png);
-    }
   }
-}
 
-  }
-}
-  &__content{
+  &__content {
     top: 20vh;
     position: absolute;
     margin-left: 1em;
     margin-right: 1em;
   }
-  &__background{
+
+  &__background {
     position: absolute;
     height: 500%;
     width: 250%;
@@ -66,7 +99,8 @@
     transform: translateX(50%) scale(0.5);
     transition: transform 1s ease;
   }
-  &__planet{
+
+  &__planet {
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
@@ -75,7 +109,8 @@
     box-sizing: border-box;
     display: block;
   }
-  &__title{
+
+  &__title {
     font-family: 'Space';
     font-weight: 200;
     font-size: 31px;
@@ -83,14 +118,14 @@
     transform: translateX(-100%);
     transition: .7s;
     overflow: hidden;
-    & span{
+
+    & span {
       display: block;
       transform: translateX(100%);
       transition: .7s;
     }
 
-    
-    &--game{
+    &--game {
       font-family: 'Moon';
       font-weight: 100;
       font-size: 25px;
@@ -98,15 +133,16 @@
       transform: translateX(-101%);
       transition: .7s;
       overflow: hidden;
-      & span{
+
+      & span {
         display: block;
         transform: translateX(101%);
         transition: .7s;
-
       }
     }
   }
-  &__description{
+
+  &__description {
     position: relative;
     margin-top: 40px;
     margin-bottom: 50px;
@@ -114,88 +150,81 @@
     transition: .6s;
     overflow: hidden;
     z-index: 10;
-    & span{
+
+    & span {
       display: block;
       transform: translateX(101%);
       transition: .6s;
     }
   }
-  &__controls{
+
+  &__controls {
     bottom: 15vh;
     position: absolute;
     display: flex;
     margin-left: 1em;
   }
 
-  &__btn{
+  &__btn {
     margin-top: 40px;
-    &--prevpos{
+
+    &--prevpos {
       margin-right: 3em;
     }
   }
-
 }
 
-
-.slider__el--show .slider__background{
+.slider__el--show .slider__background {
   transform: translateX(0%) scale(1);
-  
 }
 
-
-
-
-
-.slider__list, .slider__controls{
+.slider__list,
+.slider__controls {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* animation*/
-.slider__el .slider__explore{
+/* animation */
+.slider__el .slider__explore {
   opacity: 0;
   pointer-events: none;
 }
-.slider__el--show .slider__explore{
+
+.slider__el--show .slider__explore {
   opacity: 1;
   pointer-events: all;
 }
 
-
-
-.slider__el--show .slider__planet{
+.slider__el--show .slider__planet {
   animation: planet 720s linear infinite;
 }
-.slider__el--show .slider__background{
+
+.slider__el--show .slider__background {
   transform: translateX(0%) scale(1);
   transition: transform 1s;
-  
 }
-
-
-
-
 
 .slider__el--show .slider__title,
-.slider__el--show .slider__title span{
+.slider__el--show .slider__title span {
   opacity: 1;
   pointer-events: all;
   visibility: visible;
-  transition-delay: .9s;
+  transition-delay: 1s;
   transform: translateX(0);
 }
+
 .slider__el--show .slider__title--game,
-.slider__el--show .slider__title--game span{
+.slider__el--show .slider__title--game span {
   opacity: 1;
   pointer-events: all;
   visibility: visible;
-  transition-delay: 1.2s;
+  transition-delay: 1.25s;
   transform: translateX(0);
 }
 
 .slider__el--show .slider__description,
-.slider__el--show .slider__description span{
+.slider__el--show .slider__description span {
   opacity: 1;
   pointer-events: all;
   visibility: visible;
@@ -203,132 +232,177 @@
   transform: translateX(0);
 }
 
-.slider__el--show .slider__explore{
+.slider__el--show .slider__explore {
   pointer-events: all;
 }
 
- 
-@media(min-width: 760px){
-  .slider{
-    &__bakground{
+@media(min-width: 760px) {
+  .slider {
+    &__background {
       height: 450%;
       width: 225%;
       top: -175%;
     }
-    &__title{
+
+    &__title {
       font-size: 47px;
-      &--game{
+
+      &--game {
         font-size: 38px;
       }
     }
-    &__content{
+
+    &__content {
       margin-left: 3em;
     }
-    &__description{
+
+    &__description {
       font-size: 25px;
       max-width: 70%;
       margin-top: 70px;
       margin-bottom: 80px;
     }
-    &__explore{
+
+    &__explore {
       font-size: 31px;
     }
-    &__controls{
+
+    &__controls {
       bottom: 20vh;
     }
   }
 }
-@media(min-width: 1024px){
-  .slider{
-    &__background{
+
+@media(min-width: 1024px) {
+  .slider {
+    &__background {
       height: 300%;
       width: 150%;
       top: -100%;
       left: 40%;
     }
-    &__title{
+
+    &__indicator {
+      width: 30px;
+      height: 5px;
+      margin: 0 5px;
+      transition: opacity 0.3s ease;
+
+      &--active {
+        opacity: 1;
+      }
+    }
+
+    &__title {
       font-size: 58px;
-      &--game{
+
+      &--game {
         font-size: 47px;
       }
     }
-    &__content{
+
+    &__content {
       margin-left: 5em;
       margin-top: -3em;
     }
-    &__description{
+
+    &__description {
       font-size: 31px;
       margin-top: 80px;
       margin-bottom: 90px;
     }
-    &__explore{
+
+    &__explore {
       font-size: 25px;
     }
-    &__controls{
+
+    &__controls {
       bottom: 10vh;
     }
-    &__btn{
-      &--prevpos{
+
+    &__btn {
+      &--prevpos {
         margin-right: 10em;
       }
     }
   }
-  }
+}
 
-@media(min-width: 1440px){
-.slider{
-  &__background{
-    top: -60%;
-    left: 40%;
-    height: 210%;
-    width: 100%;
-  }
-  &__title{
-    font-size: 58px;
-    &--game{
-      font-size: 47px;
+@media(min-width: 1440px) {
+  .slider {
+    &__background {
+      top: -60%;
+      left: 40%;
+      height: 210%;
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 58px;
+
+      &--game {
+        font-size: 47px;
+      }
+    }
+
+    &__content {
+      margin-left: 5em;
+    }
+
+    &__description {
+      font-size: 25px;
+      margin-top: 60px;
+      margin-bottom: 70px;
+      width: 50%;
     }
   }
-  &__content{
-    margin-left: 5em;
-  }
-  &__description{
-    font-size: 25px;
-    margin-top: 60px;
-    margin-bottom: 70px;
-    width: 50%;
-  }
-}
 }
 
-@keyframes planet{
+@keyframes planet {
   0% {
     transform: rotate(0deg) scale(1);
   }
+
   50% {
     transform: rotate(180deg) scale(1.2);
   }
+
   100% {
     transform: rotate(360deg) scale(1);
   }
 }
 
+/* Additional styles for small window sizes */
+@media (min-width: 760px) and (max-height: 800px) {
+  .slider{
+    &__description {
+      font-size: 20px; /* Adjusted font size */
+    }
+    &__title{
+      font-size: 38px;
+      &--game{
+        font-size: 31px;
+      }
+    }
+    &__explore {
+      font-size: 20px; /* Adjusted font size */
+    }
+    &__controls{
+      margin-left: 80px;
+    }
+    &__btn{
+      width: 30px;
+      height: 30px;
+        &--next svg{
+          width: 30px;
+          height: 30px;
+        }
+        &--prev svg{
+          margin-left: 20px;
+          width: 30px;
+          height: 30px;
+        }
+  }
 
-
-/*
-
-li petit derrière AVANT
-li active visible
-li après active qui sont plus grand APRES
-
-.slider__el .planete{
-
-} AVANT
-.slider__el--show .planete{
-
-} VISIBLE
-.slider__el--show ~ .slider__el .planete {
-
-} APRES
-
-*/
+}
+}
